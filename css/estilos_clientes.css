@@ -21,6 +21,7 @@
     background-image: url("../img/sat.png");
     background-position:15px -135px;
     background-size: cover;
+    background-color: white;
     padding: 30px 0 30px 30px;
     /*background-color:rgba(0, 0, 136, 0.555);*/
     transition: 1.5s;
@@ -299,8 +300,10 @@
     
 }
 .aparece{
-    display: flex;
+    display: none;
+
 }
+
 
 
 /*no hay contenido que mostrar*/
@@ -316,24 +319,20 @@
 
 /*recoleccion de datos*/
 
+
 /*Contenido de datos*/
 .ContenedorN{
-    width: 100%;
-    
+    display: flex;
     justify-content: space-around;
     align-items: center;
     padding-left: 5%;
     background-color: rgba(0, 0, 0, 0.863);
     height: 700px;
+    z-index: 1555;    
     flex-wrap: wrap;
     /*display: none;*/
     position: relative;
     top:-800px;
-    z-index: 1000;
-    display: none;
-    
-    
-
 }
 /* seccion de input-----------------------------------------------------------------*/
 .ContenedorN .seccion{
@@ -387,9 +386,10 @@
     width: 100%;
     height: 3.125rem;
     text-align: center;
-    position: relative;
-    top: -20px;
-    display: none;
+    position: absolute;
+    top: 700px;
+    z-index: 11111;
+    
 
 }
 .boton_ a{
@@ -430,7 +430,7 @@
     line-height: 1em;
     width: 80px;
 }
-.barra_acciones ul li a{
+.barra_acciones ul li .a{
     width: 100%;
     height: 50%;
     display: block;
@@ -444,7 +444,7 @@
     z-index: 900;
 
 }
-.barra_acciones  ul li a:hover{
+.barra_acciones  ul li .a:hover{
     background-color: var(--color-menu-hover);
     color:black;
 }

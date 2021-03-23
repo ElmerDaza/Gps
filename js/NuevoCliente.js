@@ -1,11 +1,10 @@
-let btn_nuevo = document.getElementById('btn_nuevo');
-let nav_datos = document.getElementById('nuevo_');
-let con = document.getElementById("btn_guardar");
-btn_nuevo.addEventListener('click',function(){
-    console.log("ya lo logre")
+let nuevo = document.getElementById('btn_nuevo');
+let datos = document.getElementById('nuevoU');
+let conn = document.getElementById("btn_guardar");
+nuevo.addEventListener('click',function(){
     'use strict'
-    btn_datos.classList.toggle('aparece');
-    con.classList.toggle('aparece');
-    console.log("ya lo logre")
+    datos.classList.toggle('aparece');
+    conn.classList.toggle('aparece');
+    
     
 });
