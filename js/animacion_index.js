@@ -4,7 +4,7 @@ window.addEventListener('scroll', function(){
     console.log(position_objec);
     let tamaño_pantalla = window.innerHeight;
 
-    if(position_objec <tamaño_pantalla){
-        animacion.style.animation = 'mover is ease-out'
+    if(position_objec < tamaño_pantalla-15){
+        animacion.style.animation = 'mover 4s ease-out'
     }
 })
