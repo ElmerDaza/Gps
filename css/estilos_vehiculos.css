@@ -3,6 +3,7 @@
     --color-menu-hover:rgba(0, 0, 255, 0.562);
     --color_submenu:rgba(0, 0, 0, 0.623);
     --color-a-hover:rgba(255, 0, 0, 0.89);
+    --color-fondo-encavezado: rgb(41, 41, 41);
     --font-maquina-vieja:'Syne Mono', monospace;
     --color-verde-viche: rgba(0, 255, 0, 0.897);
 }
@@ -421,6 +422,8 @@
     height: 50px;
     background-color: var(--color_submenu);
     box-shadow: black 0px 5px 25px;
+    position: sticky;
+    top: 0px
 }
 .barra_acciones ul{
     display: flex;

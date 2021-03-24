@@ -124,7 +124,7 @@
 }
 .menu ul li a{
     text-decoration: none;
-    color: black;
+    color: white;
     width: auto;
     height: 40%;
     transition: 1s;
@@ -321,70 +321,6 @@
     height: 500px;
 }
 
-/*recoleccion de datos*/
-
-
-/*Contenido de datos*/
-.ContenedorN{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: 5%;
-    background-color: rgba(0, 0, 0, 0.863);
-    height: 700px;
-    z-index: 1555;    
-    flex-wrap: wrap;
-    /*display: none;*/
-    position: relative;
-    top:-800px;
-}
-/* seccion de input-----------------------------------------------------------------*/
-.ContenedorN .seccion{
-    width: 50%;
-    height: 55px;
-    position: relative;
-
-}
-.ContenedorN .seccion input{
-    height: 30px;
-    width: 70%;
-    padding-top: 20px;
-    border: none;
-    font-size: 20px;
-}
-.ContenedorN .seccion label{
-    position: absolute;
-    margin: 0px;
-    bottom: 0px;
-    left: 0%;
-    width: 70%;
-    pointer-events: none;
-    border-bottom: 1px solid black;
-}
-.ContenedorN .seccion label::after{
-    content: "";
-    position: absolute;
-    left: 0px;
-    bottom: -1px;
-    height: 100%;
-    width: 100%;
-    border-bottom: rgba(0, 0, 0, 0.397) 3px solid;
-    
-}
-.ContenedorN .seccion input:focus
-+ label [class*="contenido"]{
-    transform: translateY(-100%);
-    font-size: 14px;
-    
-
-}
-.ContenedorN .seccion label [class*="contenido"]{
-    position: absolute;
-    bottom: 25px;
-    left: 0px;
-    transition: all 0.5s ease;
-
-}
 
 .boton_{
     width: 100%;
