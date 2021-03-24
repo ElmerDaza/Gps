@@ -328,7 +328,7 @@
 .item{
     width: 23%;
     margin: 0 1% 80px 1%;
-    box-shadow: black 5px 5px 5px;
+    box-shadow: black -2px -2px 12px;
     text-align: left;
     background-color: rgb(210, 211, 224);
     border-radius: 10px;
@@ -350,7 +350,7 @@
     width: 90%;
     height: 11.56em;
     border-radius: 20px;
-    box-shadow: black -4px -4px 22px;
+    box-shadow: black -4px 1px 8px;
     margin: 15px 15px 0 15px ;
     background-color: white;
 }
@@ -364,6 +364,7 @@
     height: 50px;
     line-height: 2em;
     border-radius: .5em;
+    box-shadow: black -2px -1px 5px;
 
 }
 .boton_seccion{
