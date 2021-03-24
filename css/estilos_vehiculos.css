@@ -18,8 +18,8 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
-    background-image: url("../img/sat.png");
-    background-position:15px -135px;
+    background-image: url("../img/carroPng.jpg");
+    background-position: -300px 170px;
     background-size: cover;
     background-color: white;
     padding: 30px 0 30px 30px;
