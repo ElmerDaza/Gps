@@ -1,3 +1,11 @@
+:root{
+    -color-de-img: #FF1C0D;
+}
+.Articulo img{
+    width: 200px;
+    height:200px;
+}
+
 /*font-family: 'Lato', sans-serif;
 font-family: 'Titillium Web', sans-serif;*/
 

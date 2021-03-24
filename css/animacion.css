@@ -1,0 +1,5 @@
+@keyframes mover{
+    0%{
+        transform: rotate(360deg) scale(0.5);
+    }
+}
