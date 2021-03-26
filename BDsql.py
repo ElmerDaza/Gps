@@ -6,8 +6,8 @@ def Conectar():
         mydb = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="",
-            database="memori"
+            password="contraseña",
+            database="vigilantes"
             )
     except Exception as e:
         cn = input("escribe 'y' si es afirmativo _")
@@ -27,7 +27,7 @@ def Consulta(query, tabla):
         BD = Conectar()
         mycursor = BD.cursor()
 
-        sql = "SELECT * FROM "+tabla+" WHERE palabra ='"+query+"'"
+        sql = "SELECT * FROM "+tabla+" WHERE ID_Usuarios ='"+query+"'"
 
         mycursor.execute(sql)
 
@@ -54,13 +54,13 @@ def Consulta(query, tabla):
     return data
 
 #_______________________________________
-def Registrar(palabra,consepto,tabla):
+def Registrar(ArrayValores,tabla):
     try:
 
         BD = Conectar()
         mycursor = BD.cursor()
-        sql = "INSERT INTO "+tabla+" (ID, palabra, concepto) VALUES (%s, %s,%s)"
-        val = (0, palabra, consepto)
+        sql = "INSERT INTO "+tabla+" (ID, palabra, concepto) VALUES (%s, %s,%s,%s, %s,%s,%s, %s,%s,%s, %s,%s)"
+        val = (0,"2","3")
         mycursor.execute(sql, val)
         BD.commit()
     except Exception as e:
