@@ -59,8 +59,16 @@ def Registrar(ArrayValores,tabla):
 
         BD = Conectar()
         mycursor = BD.cursor()
-        sql = "INSERT INTO "+tabla+" (ID, palabra, concepto) VALUES (%s, %s,%s,%s, %s,%s,%s, %s,%s,%s, %s,%s)"
-        val = (0,"2","3")
+        vin = "("
+        for i in range(0,len(ArrayValores)):
+            vin += "%s" 
+
+        vin+=")"
+        sql = "INSERT INTO "+tabla+" (ID, palabra, concepto) VALUES (%s, %s,%s, %s, %s,%s, %s, %s,%s, %s, %s,%s, %s)"
+        val = [""]*len(ArrayValores)
+
+        for i in range(0,len(ArrayValores)):
+            val[i]=ArrayValores[i]
         mycursor.execute(sql, val)
         BD.commit()
     except Exception as e:
