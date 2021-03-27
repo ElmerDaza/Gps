@@ -1,5 +1,6 @@
 :root{
-    -color-de-img: #FF1C0D;
+    --color-de-img: #FF1C0D;
+    --font-titulo: 'Dancing Script', cursive;
 }
 /*font-family: 'Lato', sans-serif;
 font-family: 'Titillium Web', sans-serif;*/
@@ -42,7 +43,7 @@ font-family: 'Titillium Web', sans-serif;*/
 
 }
 .Encabezado .menu ul{
-    width: 100%;
+    width: auto;
     height: 50%;
     list-style: none; 
     
@@ -163,8 +164,12 @@ font-family: 'Titillium Web', sans-serif;*/
     width: 100%;
     position: relative;
     top:-800px;
-    background: linear-gradient(to bottom, rgb(27, 27, 27),white);
+    background: linear-gradient(to bottom, rgb(0, 0, 0),white);
 
+}
+.Contenido h1{
+    font-family: var(--font-titulo);
+    font-size: 60px;
 }
 .title{
     width: 100%;
@@ -174,7 +179,7 @@ font-family: 'Titillium Web', sans-serif;*/
     position: relative;
     top: -50px;
     
-    background: linear-gradient(to bottom, rgb(2, 2, 133),rgb(196, 23, 23));
+    background: linear-gradient(to bottom, rgb(2, 2, 133),rgb(27, 27, 27));
 }
 .center{
     text-align: center; 
@@ -184,9 +189,9 @@ font-family: 'Titillium Web', sans-serif;*/
 .Articulo{
     display: flex;
     padding: 1.5625rem;
-    width: 100%;
+    width: auto;
     height: auto;
-    margin-top: 70px;
+    margin: 4.375rem 50px;
     color: white;
 
 }
