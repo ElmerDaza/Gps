@@ -22,12 +22,12 @@ def Conectar():
     return mydb
 
 #_______________________________________
-def Consulta(query, tabla):
+def Consulta(tabla):
     try:
         BD = Conectar()
         mycursor = BD.cursor()
 
-        sql = "SELECT * FROM "+tabla+" WHERE ID_Usuarios ='"+query+"'"
+        sql = "SELECT * FROM "+tabla 
 
         mycursor.execute(sql)
 

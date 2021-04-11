@@ -17,7 +17,14 @@ def ControlPagina():
 
 @app.route('/Clientes')
 def Clientes():
-    return rt('Clientes.html')
+    dat=""
+    name_columnas = bd.Nombre_Columnas("usuarios")
+    cli = bd.Consulta("usuarios")
+    for i in range(len(name_columnas)):
+        if i < len(name_columnas)-1:
+            dat += format(name_columnas[i+1][0])
+
+    return rt('Clientes.html', dat_colum=dat, Clientes=cli)
 
 @app.route('/Cliente_Nuevo', methods=['POST'])
 def client():
