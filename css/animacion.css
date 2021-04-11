@@ -1,5 +1,5 @@
 @keyframes mover{
     0%{
-        transform: rotate(360deg) scale(2);
+        transform: scale(.8);
     }
 }

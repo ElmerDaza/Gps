@@ -1,5 +1,6 @@
 :root{
     --color-de-img: #FF1C0D;
+    --color-azul-pagina: rgb(0, 0, 255);
     --font-titulo: 'Dancing Script', cursive;
 }
 /*font-family: 'Lato', sans-serif;
@@ -164,7 +165,7 @@ font-family: 'Titillium Web', sans-serif;*/
     width: 100%;
     position: relative;
     top:-800px;
-    background: linear-gradient(to bottom, rgb(0, 0, 0),white);
+    background: linear-gradient(to bottom, rgb(0, 0, 0),rgb(58, 37, 37));
 
 }
 .Contenido h1{
@@ -178,7 +179,6 @@ font-family: 'Titillium Web', sans-serif;*/
     color: white;
     position: relative;
     top: -50px;
-    
     background: linear-gradient(to bottom, rgb(2, 2, 133),rgb(27, 27, 27));
 }
 .center{
@@ -198,6 +198,10 @@ font-family: 'Titillium Web', sans-serif;*/
 .Articulo img{
     width: 50%;
     margin: 1.25rem;
+    background-color: transparent;
+}
+.in{
+    border-radius: 50px;
 }
 .Articulo h3{
     text-align: center;
@@ -206,6 +210,7 @@ font-family: 'Titillium Web', sans-serif;*/
 }
 .Articulo p{
     font-size: 1.5625rem;
-    padding: 0 1.875rem 0 0;
+    padding:  1.875rem;
     text-align: justify;
+    box-shadow: black  5px 5px 80px;
 }
