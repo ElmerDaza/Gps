@@ -53,6 +53,111 @@ def Consulta(tabla):
     
     return data
 
+#________________________________________
+def Consulta_elimina(tabla,id):
+    try:
+        BD = Conectar()
+        mycursor = BD.cursor()
+        sql="DELETE FROM `usuarios` WHERE `Cedula` = ('"+id+"')"
+        print(sql)
+        mycursor.execute(sql)
+        mycursor.fetchall()
+        BD.commit()
+        print("llegue aqui")
+        
+        
+    except Exception as e:
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("--------------------------------------------------------")
+        print("CONECTATE __':('")
+        print("*************************************")
+        print("*******QUIERES VER EL ERROR**********")
+        print("--------------------------------------------------------")
+        cn = input("escribe 'y' si es afirmativo _")
+
+        if(cn=="y"):
+            print(e)
+           
+        else:
+           print("listo terminé")
+
+#________________________________________
+def Consultar_Usuario(tabla,id):
+    try:
+        BD = Conectar()
+        mycursor = BD.cursor()
+
+        sql = "SELECT * FROM {0} WHERE Cedula = {1}".format(tabla,id)
+
+        mycursor.execute(sql)
+
+        data = mycursor.fetchall()
+    except Exception as e:
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("--------------------------------------------------------")
+        print("CONECTATE CON UNA BASE DE DATOS__':('")
+        print("*************************************")
+        print("******* ERROR**********")
+        print("--------------------------------------------------------")
+        cn = input("escribe 'y' si es afirmativo _")
+
+        if(cn=="y"):
+            print(e)
+           
+        else:
+           print("listo terminé")
+    return data
+
+#________________________________________
+def Modificar_Usuario(tabla,id, datos):
+    try:
+        #append añade un elemento a la lista
+        datos.append(format(id))
+        BD = Conectar()
+        mycursor = BD.cursor()
+
+        sql = """UPDATE `usuarios` SET `Nombre`= '{0}',
+                `Telefono`= '{1}', `Correo`= '{2}',
+                `Numero_sim`= '{3}', `Cedula`= '{4}',
+                `Estado`= '{5}', `Pago_mensual`='{6}',
+                `Fecha_afiliacion`='{7}', `_clave_vehiculo_`='{8}',
+                `_clave_seguridad_`='{9}', `Facturacion`='{10}',
+                `Tipo_plan`= '{11}', `ID`='{12}'
+             WHERE ID_Usuarios = '{13}'
+        """.format(datos[0],datos[1],
+        datos[2],datos[3],datos[4],datos[5],
+        datos[6],datos[7],datos[8],datos[9],
+        datos[10],datos[11],datos[12],datos[13])
+        print(sql)
+        
+        mycursor.execute(sql)
+
+        data = mycursor.fetchall()
+        print(data)
+    except Exception as e:
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("--------------------------------------------------------")
+        print("CONECTATE CON UNA BASE DE DATOS__':('")
+        print("*************************************")
+        print("******* ERROR**********")
+        print("--------------------------------------------------------")
+        cn = input("escribe 'y' si es afirmativo _")
+
+        if(cn=="y"):
+            print(e)
+           
+        else:
+           print("listo terminé")
+    
 
 #________________________________________
 def Nombre_Columnas(tabla):

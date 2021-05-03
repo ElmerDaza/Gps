@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Titillium+Web:wght@900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="{{url_for("static" , filename='css/footer.css')}}" >
+    <link rel="stylesheet" tipe="text/css" href="{{url_for("static" , filename='css/font.css')}}" >
 
 </head>
 
@@ -146,68 +146,76 @@
             <img src="../img/No_hay_contenido.svg" id="no_hay_contenido" alt="">
         </div>
         <div class="tabla_clientes">
-            <thead>
-                <tr>
+            <table>
+                <thead>
+                    <tr>
+                        {%for i in dat_colum%}
+                            <td>
+                                {{i}}
+                            </td>
+                        {%endfor%}
+                        <td>
+                            Acción
+                        </td>
+                    </tr>   
                     
-                {%for i in dat_colum%}
-                    <td>
-                        {{i}}
-                    </td>
-
-                {%endfor%}
+                        
                     
-                </tr>
-            </thead>
-            <tbody>
-                <td>
+                </thead>
+                <tbody>
+                    
                     {%for i in Clientes%}
-                    <td>
-                        {{i.1}}
-                    </td>
-                    <td>
-                        {{i.2}}
-                    </td>
-                    <td>
-                        {{i.3}}
-                    </td>
-                    <td>
-                        {{i.4}}
-                    </td>
-                    <td>
-                        {{i.5}}
-                    </td>
-                    <td>
-                        {{i.6}}
-                    </td>
-                    <td>
-                        {{i.7}}
-                    </td>
-                    <td>
-                        {{i.8}}
-                    </td>
-                    <td>
-                        {{i.9}}
-                    </td>
-                    <td>
-                        {{i.10}}
-                    </td>
-                    <td>
-                        {{i.11}}
-                    </td>
-                    <td>
-                        {{i.12}}
-                    </td>
-                    <td>
-                        {{i.13}}
-                    </td>
-                    <td>
-                        <a href="#">editar</a>
-                        <a href="#">eliminar</a>
-                    </td>
+                    <tr>
+                        <td>
+                            {{i.1}}
+                        </td>
+                        <td>
+                            {{i.2}}
+                        </td>
+                        <td>
+                            {{i.3}}
+                        </td>
+                        <td>
+                            {{i.4}}
+                        </td>
+                        <td>
+                            {{i.5}}
+                        </td>
+                        <td>
+                            {{i.6}}
+                        </td>
+                        <td>
+                            {{i.7}}
+                        </td>
+                        <td>
+                            {{i.8}}
+                        </td>
+                        <td>
+                            {{i.9}}
+                        </td>
+                        <td>
+                            {{i.10}}
+                        </td>
+                        <td>
+                            {{i.11}}
+                        </td>
+                        <td>
+                            {{i.12}}
+                        </td>
+                        <td>
+                            {{i.13}}
+                        </td>
+                        <td>
+                            <a href="/Editar/{{i.5}}">editar</a>
+                            <a href="/Eliminar/{{i.5}}">eliminar</a>
+                        </td>
+                    </tr>
 
                     {%endfor%}
-                </td>
-            </tbody>
+                
+                </tbody>
+            </table>
+            
         </div>
 
         <div class="aparece" id="nuevoU">

@@ -9,16 +9,16 @@
 <body>
     <h1 class="titulo">Ingrese contenido Solicitado</h1>
     
-    <form action="/add" method="POST">
+    <form action="/Modificar/{{dat.0}}" method="POST">
         <div class="ContenedorN" id="">
             <div class="seccion">
-                <input type="text" name="Nombre_Completo" autocomplete="off" required>
+                <input type="text" name="Nombre_Completo" value="{{dat.1}}" autocomplete="off" required>
                 <label for="Nombre_Completo" class="Label_Nombre_Completo">
                     <span class="contenido_Nombre_Completo">Nombre Completo.</span>
                 </label>
             </div>
             <div class="seccion">
-                <input type="text" name="Telefono" autocomplete="off" required>
+                <input type="text" name="Telefono" value="{{dat.2}}" autocomplete="off" required>
                 <label for="Telefono" class="Label_Telefono">
                     <span class="contenido_Telefono">Telefono.</span>
                 </label>
@@ -29,13 +29,13 @@
 
 
             <div class="seccion">
-                <input type="text" name="Correo" autocomplete="off" required>
+                <input type="text" name="Correo" value="{{dat.3}}" autocomplete="on" required>
                 <label for="Correo" class="Label_Correo">
                     <span class="contenido_Correo">Correo.</span>
                 </label>
             </div>
             <div class="seccion">
-                <input type="text" name="Tipo_GPS" autocomplete="off" required>
+                <input type="text" name="Tipo_GPS" value="{{dat.5}}" autocomplete="off" required>
                 <label for="Tipo_GPS" class="LabelTipo_GPS">
                     <span class="contenido_Tipo_GPS">Tipo de GPS.</span>
                 </label>
@@ -47,39 +47,39 @@
 
 
             <div class="seccion">
-                <input type="text" name="Numero_Sim_GPS" autocomplete="off" required>
+                <input type="text" name="Numero_Sim_GPS" value="{{dat.4}}" autocomplete="off" required>
                 <label for="Numero_Sim_GPS" class="Label_Numero_Sim_GPS">
                     <span class="contenido_Numero_Sim_GPS">Numero Sim GPS.</span>
                 </label>
             </div>
             <div class="seccion">
-                <input type="text" name="Pago_Mensual" autocomplete="off" required>
+                <input type="text" name="Pago_Mensual" value="{{dat.9}}" autocomplete="off" required>
                 <label for="Pago_Mensual" class="Label_Pago_Mensual">
                     <span class="contenido_Pago_Mensual">Pago Mensual.</span>
                 </label>
             </div>
 
             <div class="seccion">
-                <input type="text" name="Cedula" autocomplete="off" required>
+                <input type="text" name="Cedula" value="{{dat.7}}" autocomplete="off" required>
                 <label for="Cedula" class="Label_Cedula">
                     <span class="contenido_Cedula">Cedula.</span>
                 </label>
             </div>
             <div class="seccion">
-                <input type="text" name="Estado" autocomplete="off" required>
+                <input type="text" name="Estado" value="{{dat.8}}" autocomplete="off" required>
                 <label for="Estado" class="Label_Estado">
                     <span class="contenido_Estado">Estado.</span>
                 </label>
             </div>
 
             <div class="seccion">
-                <input type="text" name="ID" autocomplete="off" required>
+                <input type="text" name="ID" value="{{dat.13}}" autocomplete="off" required>
                 <label for="ID" class="Label_ID">
                     <span class="contenido_ID">ID M2</span>
                 </label>
             </div>
             <div class="seccion">
-                <input type="text" name="Fecha_Afiliacion" autocomplete="off" required>
+                <input type="text" name="Fecha_Afiliacion" value="{{dat.10}}" autocomplete="off" required>
                 <label for="Fecha_Afiliacion" class="LabelFecha_Afiliacion">
                     <span class="contenido_Fecha_Afiliacion">Fecha de afiliación.</span>
                 </label>
@@ -87,19 +87,19 @@
 
 
             <div class="seccion">
-                <input type="text" name="Marca_Vehiculo" autocomplete="off" required>
+                <input type="text" name="Marca_Vehiculo" value="{{dat.12}}" autocomplete="off" required>
                 <label for="Marca_Vehiculo" class="Label_Marca_Vehiculo">
                     <span class="contenido_Marca_Vehiculo">Marca del vehiculo</span>
                 </label>
             </div>
             <div class="seccion">
-                <input type="text" name="PlacaV" autocomplete="off" required>
+                <input type="text" name="PlacaV" value="{{dat.11}}" autocomplete="off" required>
                 <label for="PlacaV" class="LabelPlacaV">
                     <span class="contenido_PlacaV">Placa del Vehiculo.</span>
                 </label>
             </div>
             <div class="seccion">
-                <input type="text" name="Color" autocomplete="off" required>
+                <input type="text" name="Color" value="{{dat.6}}" autocomplete="off" required>
                 <label for="Color" class="LabelColor">
                     <span class="contenido_Color">Placa del Vehiculo.</span>
                 </label>

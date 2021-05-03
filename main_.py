@@ -17,12 +17,13 @@ def ControlPagina():
 
 @app.route('/Clientes')
 def Clientes():
-    dat=""
+    dat=[]
     name_columnas = bd.Nombre_Columnas("usuarios")
     cli = bd.Consulta("usuarios")
     for i in range(len(name_columnas)):
         if i < len(name_columnas)-1:
-            dat += format(name_columnas[i+1][0])
+            #append añade un elemento a la lista
+            dat.append(format(name_columnas[i+1][0])) 
 
     return rt('Clientes.html', dat_colum=dat, Clientes=cli)
 
@@ -48,9 +49,46 @@ def client():
         Cedula,estdo,pago_mensual,fecha,Tipo_GPS,marca,
         Placa,color,ID]
         bd.Registrar(todo,'usuarios')
-        return rt("Cliente_Nuevo.html")
+        return redirect("Clientes")
+    
+@app.route('/Eliminar/<string:id>')
+def delete(id):
+
+    print(id)
+    bd.Consulta_elimina("usuarios", id)
     
 
+    return redirect(url_for("Clientes"))
+
+@app.route('/Editar/<id>')
+def edit(id):
+    respuesta = bd.Consultar_Usuario("usuarios",id)
+    return rt("Editar_Cliente.html", dat=respuesta[0])
+
+@app.route('/Modificar/<id>', methods=['POST'])
+def Modificar(id):
+    if request.method == 'POST':
+        nombre = request.form['Nombre_Completo']
+        telefono =  request.form['Telefono']
+        correo =  request.form['Correo']
+        Tipo_GPS = request.form['Tipo_GPS']
+        numero_sim = request.form['Numero_Sim_GPS']
+        pago_mensual = request.form['Pago_Mensual']
+        Cedula = request.form['Cedula']
+        estdo = request.form['Estado']
+        ID = request.form['ID']
+        fecha = request.form['Fecha_Afiliacion']
+        marca = request.form['Marca_Vehiculo']
+        Placa = request.form['PlacaV']
+        color = request.form['Color']
+
+        todo = [nombre,telefono,correo,numero_sim,
+        Cedula,estdo,pago_mensual,fecha,Tipo_GPS,marca,
+        Placa,color,ID]
+        print(len(todo))
+        bd.Modificar_Usuario("usuarios",id,todo)
+        
+        return rt("Clientes.html")
 
 if __name__ == '__main__':
     app.run(port = 3000,debug= True)
