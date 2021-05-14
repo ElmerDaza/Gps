@@ -128,7 +128,7 @@
 }
 .menu li:hover .SubMenu{
     display:block;
-    width: 800%;
+    width: 700%;
 
 }
 .menu ul li a{
@@ -313,10 +313,11 @@
 
 .Contenido{
     margin: 30px auto;
-    z-index: 100;
+    z-index: -1;
     width: auto;
     text-align: center;
     padding: 30px;
+    background: none;
 
 }
 .Contenido h2{
