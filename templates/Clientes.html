@@ -1,64 +1,14 @@
 {%extends "Plantilla.html" %}
 {%block body%}
-
-    <div class="Encabezado">
-        <div class="logo">
-            <img src="../img/logo.jpg" class="logoImagen" alt="">
-
-        </div>
-        <div class="menu">
-            <ul class="ListaMenu">
-                <li class="ItemMenu">
-                    <a href="index.html">Home
-                        <hr class="line">
-                    </a>
-
-
-
-
-                </li>
-                <li class="ItemMenu">
-                    <a href="#" id="cursor">Servicios
-                        <hr class="line">
-                    </a>
-
-
-                    <ul class="SubMenu">
-                        <li class="subMenuItem"><a href="#">
-                                Monitor
-                                <hr class="line">
-                            </a></li>
-                        <li class="subMenuItem"><a href="Control.html">
-                                Control
-                                <hr class="line">
-                            </a></li>
-                        <li class="subMenuItem"><a href="#">
-                                Registros
-                                <hr class="line">
-                            </a></li>
-                    </ul>
-                </li>
-                <li class="ItemMenu">
-                    <a href="#">Sobre Nosotros
-                        <hr class="line">
-                    </a>
-                </li>
-                <li class="ItemMenu">
-                    <a href="#">Contacto
-                        <hr class="line">
-                    </a>
-                </li>
-            </ul>
-
-        </div>
-    </div>
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav_lateral_stile.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/estilos_clientes.css')}}">
     <div class="Contenedor">
 
         <div class="tras" id="tras"><b>></b></div>
         <div class="Nav_Lateral" id="Nav_Lateral">
 
             <div class="nav_lateral" id="nav_lateral">
-
+    
                 <h2 class="Logo">
                     <a href="" class="logo">
                         VIGILANTES-24/7
@@ -66,8 +16,8 @@
                 </h2>
                 <hr class="LineaCompleta">
                 <div class="Imagen">
-                    <img src="../img/logo.jpg" alt="Vigilantes-24/7">
-
+                    <img src="{{ url_for('static', filename= 'img/logo.jpg')}}" alt="Vigilantes-24/7">
+    
                 </div>
                 <h3 class="NombreUsuario">
                     Nombre de Usuario
@@ -78,9 +28,9 @@
                     <div class="Icono"><a href="">i-</a></div>
                     <div class="Icono"><a href="">i+</a></div>
                 </div>
-
+    
                 <hr class="LineaCompleta">
-
+    
                 <div class="La_lista">
                     <ul>
                         <li><a href="">Materiales</a></li>
@@ -90,9 +40,8 @@
                     </ul>
                 </div>
             </div>
-
+    
         </div>
-
     </div>
     <div class="Contenido">
 
@@ -124,10 +73,13 @@
                 </li>
             </ul>
         </div>
+        {% if contenido == True%}
         <div class="sin_contenido">
+
             <h2>SIN CONTENIDO</h2>
-            <img src="../img/No_hay_contenido.svg" id="no_hay_contenido" alt="">
+            <img src="{{url_for('static', filename='img/No_hay_contenido.svg')}}" id="no_hay_contenido" alt="">
         </div>
+        {%else%}
         <div class="tabla_clientes">
             <table>
                 <thead>
@@ -190,7 +142,7 @@
                         </td>
                         <td>
                             <a href="/Editar/{{i.5}}">editar</a>
-                            <a href="/Eliminar/{{i.5}}">eliminar</a>
+                            <a href="/Eliminar/{{i.0}}">eliminar</a>
                         </td>
                     </tr>
 
@@ -198,8 +150,8 @@
                 
                 </tbody>
             </table>
-            
         </div>
+        {%endif%}
 
         <div class="aparece" id="nuevoU">
             <form action="/Cliente_Nuevo" method="POST">
@@ -227,48 +179,18 @@
                             <span class="contenido_Correo">Correo.</span>
                         </label>
                     </div>
-                    <div class="seccion">
-                        <input type="text" name="Tipo_GPS" autocomplete="off" required>
-                        <label for="Tipo_GPS" class="LabelTipo_GPS">
-                            <span class="contenido_Tipo_GPS">Tipo de GPS.</span>
-                        </label>
-                    </div>
-        
-        
-        
-        
-        
-        
-                    <div class="seccion">
-                        <input type="text" name="Numero_Sim_GPS" autocomplete="off" required>
-                        <label for="Numero_Sim_GPS" class="Label_Numero_Sim_GPS">
-                            <span class="contenido_Numero_Sim_GPS">Numero Sim GPS.</span>
-                        </label>
-                    </div>
-                    <div class="seccion">
-                        <input type="text" name="Pago_Mensual" autocomplete="off" required>
-                        <label for="Pago_Mensual" class="Label_Pago_Mensual">
-                            <span class="contenido_Pago_Mensual">Pago Mensual.</span>
-                        </label>
-                    </div>
-        
+
                     <div class="seccion">
                         <input type="text" name="Cedula" autocomplete="off" required>
                         <label for="Cedula" class="Label_Cedula">
                             <span class="contenido_Cedula">Cedula.</span>
                         </label>
                     </div>
-                    <div class="seccion">
-                        <input type="text" name="Estado" autocomplete="off" required>
-                        <label for="Estado" class="Label_Estado">
-                            <span class="contenido_Estado">Estado.</span>
-                        </label>
-                    </div>
         
                     <div class="seccion">
                         <input type="text" name="ID" autocomplete="off" required>
                         <label for="ID" class="Label_ID">
-                            <span class="contenido_ID">ID M2</span>
+                            <span class="contenido_ID">Codigo de seguridad</span>
                         </label>
                     </div>
                     <div class="seccion">
@@ -277,35 +199,16 @@
                             <span class="contenido_Fecha_Afiliacion">Fecha de afiliación.</span>
                         </label>
                     </div>
+                    
+                    <button type="submit" class="btn_guardar">
+                        Guardar
+    
+                    </button>
         
-        
-                    <div class="seccion">
-                        <input type="text" name="Marca_Vehiculo" autocomplete="off" required>
-                        <label for="Marca_Vehiculo" class="Label_Marca_Vehiculo">
-                            <span class="contenido_Marca_Vehiculo">Marca del vehiculo</span>
-                        </label>
-                    </div>
-                    <div class="seccion">
-                        <input type="text" name="PlacaV" autocomplete="off" required>
-                        <label for="PlacaV" class="LabelPlacaV">
-                            <span class="contenido_PlacaV">Placa del Vehiculo.</span>
-                        </label>
-                    </div>
-                    <div class="seccion">
-                        <input type="text" name="Color" autocomplete="off" required>
-                        <label for="Color" class="LabelColor">
-                            <span class="contenido_Color">Placa del Vehiculo.</span>
-                        </label>
-                    </div>
                     <hr id="diviciona">
         
         
                 </div>
-
-                <button type="submit" class="btn_guardar">
-                    Guardar
-
-                </button>
 
             </form>
 
@@ -319,6 +222,8 @@
 
         
     </div>
+    <script src="{{url_for('static', filename='js/menu.js')}}"></script>
+    <script src="{{url_for('static', filename='js/NuevoCliente.js')}}"></script>
 
 
 {%endblock%}

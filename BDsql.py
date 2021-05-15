@@ -58,7 +58,7 @@ def Consulta_elimina(tabla,id):
     try:
         BD = Conectar()
         mycursor = BD.cursor()
-        sql="DELETE FROM `usuarios` WHERE `Cedula` = ('"+id+"')"
+        sql="DELETE FROM `usuarios` WHERE `ID_Usuarios` = ('"+id+"')"
         print(sql)
         mycursor.execute(sql)
         mycursor.fetchall()

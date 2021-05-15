@@ -1,3 +1,4 @@
+
 :root{
     --color-de-img: #FF1C0D;
     --color-azul-pagina: rgb(0, 0, 255);
@@ -13,7 +14,7 @@ font-family: 'Titillium Web', sans-serif;*/
 
 }
 
-
+/*baner-----------------*/
 .Baner{
     background-image: url(https://carnovo.com/wp-content/uploads/2018/07/localizar-coche-google-maps.jpg);
     background-position:15px center;
@@ -22,7 +23,7 @@ font-family: 'Titillium Web', sans-serif;*/
     position: relative;
     top: -160px;
     width: 100%;
-    height: 700px;
+    height: 650px;
 }
 .ParrafoTitulo{
     
@@ -38,9 +39,7 @@ font-family: 'Titillium Web', sans-serif;*/
 }
 .sobreBaner{
     width: 100%;
-    height: 700px;
-    
-    
+    height: 650px;
     background-color:rgba(0, 0, 0, 0.534);
     z-index: 2;
 
