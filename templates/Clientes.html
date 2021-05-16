@@ -2,160 +2,164 @@
 {%block body%}
 <link rel="stylesheet" href="{{url_for('static', filename='css/nav_lateral_stile.css')}}">
 <link rel="stylesheet" href="{{url_for('static', filename='css/estilos_clientes.css')}}">
-    <div class="Contenedor">
+<div class="Contenedor">
 
-        <div class="tras" id="tras"><b>></b></div>
-        <div class="Nav_Lateral" id="Nav_Lateral">
+    <div class="tras" id="tras"><b>></b></div>
+    <div class="Nav_Lateral" id="Nav_Lateral">
 
-            <div class="nav_lateral" id="nav_lateral">
-    
-                <h2 class="Logo">
-                    <a href="" class="logo">
-                        VIGILANTES-24/7
-                    </a>
-                </h2>
-                <hr class="LineaCompleta">
-                <div class="Imagen">
-                    <img src="{{ url_for('static', filename= 'img/logo.jpg')}}" alt="Vigilantes-24/7">
-    
-                </div>
-                <h3 class="NombreUsuario">
-                    Nombre de Usuario
-                    <hr class="LineaCorta">
-                </h3>
-                <div class="tres_iconos">
-                    <div class="Icono"><a href="">i*</a></div>
-                    <div class="Icono"><a href="">i-</a></div>
-                    <div class="Icono"><a href="">i+</a></div>
-                </div>
-    
-                <hr class="LineaCompleta">
-    
-                <div class="La_lista">
-                    <ul>
-                        <li><a href="">Materiales</a></li>
-                        <li><a href="">Lista de proyectos</a></li>
-                        <li><a href="">Actividades</a></li>
-                        <li><a href="">Costo de unidad de actividad</a></li>
-                    </ul>
-                </div>
+        <div class="nav_lateral" id="nav_lateral">
+
+            <h2 class="Logo">
+                <a href="" class="logo">
+                    VIGILANTES-24/7
+                </a>
+            </h2>
+            <hr class="LineaCompleta">
+            <div class="Imagen">
+                <img src="{{ url_for('static', filename= 'img/logo.jpg')}}" alt="Vigilantes-24/7">
+
             </div>
-    
+            <h3 class="NombreUsuario">
+                Nombre de Usuario
+                <hr class="LineaCorta">
+            </h3>
+            <div class="tres_iconos">
+                <div class="Icono"><a href="">i*</a></div>
+                <div class="Icono"><a href="">i-</a></div>
+                <div class="Icono"><a href="">i+</a></div>
+            </div>
+
+            <hr class="LineaCompleta">
+
+            <div class="La_lista">
+                <ul>
+                    <li><a href="">Materiales</a></li>
+                    <li><a href="">Lista de proyectos</a></li>
+                    <li><a href="">Actividades</a></li>
+                    <li><a href="">Costo de unidad de actividad</a></li>
+                </ul>
+            </div>
         </div>
+
     </div>
-    <div class="Contenido">
+</div>
+<div class="Contenido">
 
-        <div class="barra_acciones">
-            <ul>
-                <li>
-                    <div class="a" id="btn_nuevo">
-                        <span  >
-                            <b>Nuevo</b>
-    
-                        </span>
-                    </div>
+    <div class="barra_acciones">
+        <ul>
+            <li>
+                <div class="a" id="btn_nuevo">
+                    <span>
+                        <b>Nuevo</b>
 
-                </li>
-                <li class="apa">
-                    <div class="a">
-                        <b>Editar</b>
-                    </div>
-                </li>
-                <li class="apa">
-                    <div class="a">
-                        <b>Eliminar</b>
-                    </div>
-                </li>
-                <li class="apa">
-                    <div class="a">
-                        <b>Retirado</b>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        {% if contenido == True%}
-        <div class="sin_contenido">
+                    </span>
+                </div>
 
-            <h2>SIN CONTENIDO</h2>
-            <img src="{{url_for('static', filename='img/No_hay_contenido.svg')}}" id="no_hay_contenido" alt="">
-        </div>
-        {%else%}
-        <div class="tabla_clientes">
-            <table class="Tabla_Clientes">
-                <thead>
-                    <tr>
-                        {%for i in dat_colum%}
-                            <td>
-                                {{i}}
-                            </td>
-                        {%endfor%}
-                        <td>
-                            Acción
-                        </td>
-                    </tr>   
-                    
-                        
-                    
-                </thead>
-                <tbody>
-                    
-                    {%for i in Clientes%}
-                    <tr>
-                        <td>
-                            {{i.1}}
-                        </td>
-                        <td>
-                            {{i.2}}
-                        </td>
-                        <td>
-                            {{i.3}}
-                        </td>
-                        <td>
-                            {{i.4}}
-                        </td>
-                        <td>
-                            {{i.5}}
-                        </td>
-                        <td>
-                            {{i.6}}
-                        </td>
-                        <td>
-                            {{i.7}}
-                        </td>
-                        <td>
-                            {{i.8}}
-                        </td>
-                        <td>
-                            {{i.9}}
-                        </td>
-                        <td>
-                            {{i.10}}
-                        </td>
-                        <td>
-                            {{i.11}}
-                        </td>
-                        <td>
-                            {{i.12}}
-                        </td>
-                        <td>
-                            {{i.13}}
-                        </td>
-                        <td>
-                            <a href="/Editar/{{i.0}}">editar</a>
-                            <a href="/Eliminar/{{i.0}}">eliminar</a>
-                        </td>
-                    </tr>
+            </li>
+            <li class="apa">
+                <div class="a">
+                    <b>Editar</b>
+                </div>
+            </li>
+            <li class="apa">
+                <div class="a">
+                    <b>Eliminar</b>
+                </div>
+            </li>
+            <li class="apa">
+                <div class="a">
+                    <b>Retirado</b>
+                </div>
+            </li>
+        </ul>
+    </div>
+    {% if contenido == True%}
+    <div class="sin_contenido">
 
+        <h2>SIN CONTENIDO</h2>
+        <img src="{{url_for('static', filename='img/No_hay_contenido.svg')}}" id="no_hay_contenido" alt="">
+    </div>
+    {%else%}
+    <div class="tabla_clientes">
+        <table class="Tabla_Clientes">
+            <thead>
+                <tr>
+                    {%for i in dat_colum%}
+                    <td>
+                        {{i}}
+                    </td>
                     {%endfor%}
-                
-                </tbody>
-            </table>
-        </div>
-        {%endif%}
+                    <td>
+                        Acción
+                    </td>
+                </tr>
 
-        <div class="aparece" id="nuevoU">
+
+
+            </thead>
+            <tbody>
+
+                {%for i in Clientes%}
+                <tr>
+                    <td>
+                        {{i.1}}
+                    </td>
+                    <td>
+                        {{i.2}}
+                    </td>
+                    <td>
+                        {{i.3}}
+                    </td>
+                    <td>
+                        {{i.4}}
+                    </td>
+                    <td>
+                        {{i.5}}
+                    </td>
+                    <td>
+                        {{i.6}}
+                    </td>
+                    <td>
+                        {{i.7}}
+                    </td>
+                    <td>
+                        {{i.8}}
+                    </td>
+                    <td>
+                        {{i.9}}
+                    </td>
+                    <td>
+                        {{i.10}}
+                    </td>
+                    <td>
+                        {{i.11}}
+                    </td>
+                    <td>
+                        {{i.12}}
+                    </td>
+                    <td>
+                        {{i.13}}
+                    </td>
+                    <td>
+                        <a href="/Editar/{{i.0}}">editar</a>
+                        <a href="/Eliminar/{{i.0}}">eliminar</a>
+                    </td>
+                </tr>
+
+                {%endfor%}
+
+            </tbody>
+        </table>
+    </div>
+    {%endif%}
+
+    <div class="aparece" id="nuevoU">
+        <div>
+            
             <form action="/Cliente_Nuevo" method="POST">
+                
                 <div class="ContenedorN" id="">
+                    
                     <div class="seccion">
                         <input type="text" name="Nombre_Completo" autocomplete="off" required>
                         <label for="Nombre_Completo" class="Label_Nombre_Completo">
@@ -168,11 +172,11 @@
                             <span class="contenido_Telefono">Telefono.</span>
                         </label>
                     </div>
-        
-        
-        
-        
-        
+
+
+
+
+
                     <div class="seccion">
                         <input type="text" name="Correo" autocomplete="off" required>
                         <label for="Correo" class="Label_Correo">
@@ -186,7 +190,7 @@
                             <span class="contenido_Cedula">Cedula.</span>
                         </label>
                     </div>
-        
+
                     <div class="seccion">
                         <input type="text" name="ID" autocomplete="off" required>
                         <label for="ID" class="Label_ID">
@@ -199,31 +203,35 @@
                             <span class="contenido_Fecha_Afiliacion">Fecha de afiliación.</span>
                         </label>
                     </div>
-                    
+
                     <button type="submit" class="btn_guardar">
                         Guardar
-    
+
                     </button>
-        
+                    <div class="salir">
+                        <p id="salir">Cancelar</p>
+                    </div>
+                    
                     <hr id="diviciona">
-        
-        
+
+
                 </div>
 
             </form>
-
-            
         </div>
 
-        
 
-
-        
-
-        
     </div>
-    <script src="{{url_for('static', filename='js/menu.js')}}"></script>
-    <script src="{{url_for('static', filename='js/NuevoCliente.js')}}"></script>
+
+
+
+
+
+
+
+</div>
+<script src="{{url_for('static', filename='js/menu.js')}}"></script>
+<script src="{{url_for('static', filename='js/NuevoCliente.js')}}"></script>
 
 
 {%endblock%}

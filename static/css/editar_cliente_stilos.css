@@ -2,6 +2,9 @@
     --color-de-img: #FF1C0D;
     --color-azul-pagina: rgb(0, 0, 255);
     --font-titulo: 'Dancing Script', cursive;
+    --color-fondo-encavezado: rgb(41, 41, 41);
+    --font-maquina-vieja:'Syne Mono', monospace;
+    --color-verde-viche: rgba(0, 255, 0, 0.897);
 }
 /*nav superior*/
 .Encabezado{
@@ -18,30 +21,16 @@
     transition: 1.5s;
     
 }
-/*Lista-------------------------*/
-.La_lista{/*div*/
-    padding: 0 15% 0 0;
+/*nav superior-------------------------*/
+
+.menu ul li a{
+    height: 1.0625rem;
 }
 
-.La_lista ul li{
-    list-style: none;
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-    
-}
-.La_lista ul li a{
-    transition: 1s;
-}
-.La_lista ul li a:hover{
-    color: white;
-    /*esta linea cambia el cursor a la manito*/
-    cursor: pointer;
-    font-size: 1.3em;
-    
-}
 
 /*titulo----------*/
 .titulo{
+    font-size: 2.8125rem;
     text-align: center;
     font-family: var(--font-titulo);
     padding: 1.25rem 0;
@@ -63,21 +52,22 @@
     text-decoration: none;
     color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    line-height: 40px;
+    line-height: 2.5rem;
 
 }
 
 /*EStilod de formulario----------------*/
+
 .ContenedorN{
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    padding-left: 5%;
+    text-align: center;
     background-color: rgba(0, 0, 0, 0.863);
-    height: 300px;
+    height: 25rem;
     z-index: 1555;    
     flex-wrap: wrap;
     /*display: none;*/
+    padding: 0.9375rem;
     
     
 }
@@ -90,7 +80,7 @@
 
 }
 .ContenedorN .seccion input{
-    height: 1.875rem;
+    height: 2.1875rem;
     width: 70%;
     padding-top: 1.25rem;
     border: none;
@@ -99,8 +89,8 @@
 .ContenedorN .seccion label{
     position: absolute;
     margin: 0px;
-    bottom: 0px;
-    left: 0%;
+    bottom: 0.0125rem;
+    left: 15%;
     width: 70%;
     pointer-events: none;
     border-bottom: 1px solid black;
@@ -123,6 +113,7 @@
 
 }
 .ContenedorN .seccion label [class*="contenido"]{
+    text-align: center;
     position: absolute;
     bottom: 1.5625rem;
     left: 0px;
@@ -132,7 +123,7 @@
 .btn_guardar{
     width: 12.25rem;
     height: 3.125rem;
-    background-color: green;
+    background-color: var(--color-verde-viche);
     box-shadow: black 0.3125rem 0.3125rem 0.3125rem;
     border-radius: 1.5625rem;
 }

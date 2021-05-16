@@ -1,4 +1,5 @@
 :root{
+    --color-de-img: #FF1C0D;
     --color-menu: rgba(0, 0, 255, 0.393);
     --color-menu-hover:rgba(0, 0, 255, 0.562);
     --color_submenu:rgba(0, 0, 0, 0.623);
@@ -13,26 +14,21 @@
     font-family: 'Lato', sans-serif;
 
 }
-
+/*------------encabezado------------*/
 .Encabezado{
     width: 100%;
-    height: 80px;
+    height: 5rem;
     display: flex;
     justify-content: space-between;
     background-image: url("../img/sat.png");
-    background-position:15px -135px;
+    background-position:0.9375rem -8.4375rem;
     background-size: cover;
     background-color: var(--color-fondo-encavezado);
-    padding: 30px 0 30px 30px;
+    padding: 1.875rem 0 1.875rem 1.875rem;
     /*background-color:rgba(0, 0, 136, 0.555);*/
-    transition: 1.5s;
-    
+    transition: 1.5s;  
 }
 
-
-#cursor{
-    background-color: var(--color-menu);
-}
 
 /*Lista-------------------------*/
 .La_lista{/*div*/
@@ -41,8 +37,8 @@
 
 .La_lista ul li{
     list-style: none;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     
 }
 .La_lista ul li a{
@@ -66,12 +62,12 @@
 /*no hay contenido que mostrar*/
 .sin_contenido{
     text-align: center;
-    margin: 50px 0;
+    margin: 3.125rem 0;
 
 }
 #no_hay_contenido{
-    width: 500px;
-    height: 500px;
+    width: 31.25rem;
+    height: 31.25rem;
 }
 
 /*recoleccion de datos*/
@@ -84,7 +80,7 @@
     align-items: center;
     padding-left: 5%;
     background-color: rgba(0, 0, 0, 0.863);
-    height: 700px;
+    height: 43.75rem;
     z-index: 1555;    
     flex-wrap: wrap;
     /*display: none;*/
@@ -92,20 +88,40 @@
     top: 00px;
     
 }
+#salir{
+    
+    font-family: var(--font-maquina-vieja);
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+.salir{
+    text-align: center;
+    line-height: 3.125rem;
+    background-color: var(--color-de-img);
+    font-family: var(--font-maquina-vieja);
+    width: 12.25rem;
+    height: 3.125rem;
+    box-shadow: white 0.125rem 0.125rem 0.125rem;
+    border-radius: 1.5625rem;
+}
 
 /* seccion de input-----------------------------------------------------------------*/
 .ContenedorN .seccion{
     width: 50%;
-    height: 55px;
+    height: 3.4375rem;
     position: relative;
 
 }
 .ContenedorN .seccion input{
-    height: 30px;
+    height: 1.875rem;
     width: 70%;
-    padding-top: 20px;
+    padding-top: 1.25rem;
     border: none;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .ContenedorN .seccion label{
     position: absolute;
@@ -129,19 +145,26 @@
 .ContenedorN .seccion input:focus
 + label [class*="contenido"]{
     transform: translateY(-100%);
-    font-size: 14px;
+    font-size: 0.875rem;
     
 
 }
 .ContenedorN .seccion label [class*="contenido"]{
     position: absolute;
-    bottom: 25px;
+    bottom: 1.5625rem;
     left: 0px;
     transition: all 0.5s ease;
 
 }
 
-
+.btn_guardar{
+    font-family: var(--font-maquina-vieja);
+    width: 12.25rem;
+    height: 3.125rem;
+    background-color: var(--color-verde-viche);
+    box-shadow: white 0.125rem 0.125rem 0.125rem;
+    border-radius: 1.5625rem;
+}
 
 #diviciona{
     width: 100%;
@@ -153,22 +176,22 @@
 /*barra de acciones-------------------------*/
 .barra_acciones{
     width: 100%;
-    height: 50px;
+    height: 3.125rem;
     background-color: var(--color_submenu);
-    box-shadow: black 0px 5px 25px;
+    box-shadow: black 0rem 0.3125rem 1.5625rem;
     position: sticky;
     top: 0px
 }
 .barra_acciones ul{
     display: flex;
     list-style: none;
-    margin: 0 0 0 100px;
+    margin: 0 0 0 6.25rem;
     
 }
 .barra_acciones ul li{
-    margin: 0 35px 0 0;
+    margin: 0 2.1875rem 0 0;
     line-height: 1em;
-    width: 80px;
+    width: 5rem;
 }
 .barra_acciones ul li .a{
     width: 100%;
@@ -178,8 +201,8 @@
     color: black;
     background-color: var(--color-verde-viche);
     margin: 12% 0 0 0;
-    border-radius: 25px;
-    padding: 5px;
+    border-radius: 1.5625rem;
+    padding: 0.3125rem;
     cursor: pointer;
     z-index: 900;
 
