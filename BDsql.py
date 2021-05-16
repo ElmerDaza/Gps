@@ -1,5 +1,7 @@
 import mysql.connector
 
+
+
 def Conectar():
     try:
 
@@ -90,7 +92,7 @@ def Consultar_Usuario(tabla,id):
         BD = Conectar()
         mycursor = BD.cursor()
 
-        sql = "SELECT * FROM {0} WHERE Cedula = {1}".format(tabla,id)
+        sql = "SELECT * FROM {0} WHERE ID_Usuarios = {1}".format(tabla,id)
 
         mycursor.execute(sql)
 
@@ -121,25 +123,15 @@ def Modificar_Usuario(tabla,id, datos):
         datos.append(format(id))
         BD = Conectar()
         mycursor = BD.cursor()
-
-        sql = """UPDATE `usuarios` SET `Nombre`= '{0}',
-                `Telefono`= '{1}', `Correo`= '{2}',
-                `Numero_sim`= '{3}', `Cedula`= '{4}',
-                `Estado`= '{5}', `Pago_mensual`='{6}',
-                `Fecha_afiliacion`='{7}', `_clave_vehiculo_`='{8}',
-                `_clave_seguridad_`='{9}', `Facturacion`='{10}',
-                `Tipo_plan`= '{11}', `ID`='{12}'
-             WHERE ID_Usuarios = '{13}'
-        """.format(datos[0],datos[1],
-        datos[2],datos[3],datos[4],datos[5],
-        datos[6],datos[7],datos[8],datos[9],
-        datos[10],datos[11],datos[12],datos[13])
-        print(sql)
+        
+        sql = "UPDATE `usuarios` SET `Nombre`= '{0}',`Telefono`= '{1}', `Correo`= '{2}', `Cedula`= '{3}',`Fecha_afiliacion`='{4}' WHERE ID_Usuarios = '{5}'".format(
+            datos[0],datos[1],datos[2],datos[3],datos[4],datos[5])
         
         mycursor.execute(sql)
-
-        data = mycursor.fetchall()
-        print(data)
+        print(sql)
+        mycursor.fetchall()
+        
+        
     except Exception as e:
         print("|")
         print("|")
@@ -280,3 +272,32 @@ def TablaNueva(columnasNAME,tablaNAME):
             
     
 
+
+try:
+    
+    BD = Conectar()
+    mycursor = BD.cursor()
+    
+    sql = "UPDATE `usuarios` SET `Nombre`= 'usuario',`Telefono`= '111', `Correo`= 'usuario@ejemplo.com', `Cedula`= '1114455889',`Fecha_afiliacion`='15/05/2021' WHERE ID_Usuarios = '26'"
+    mycursor.execute(sql)
+    print(sql)
+    mycursor.fetchall()
+    
+    
+except Exception as e:
+    print("|")
+    print("|")
+    print("|")
+    print("|")
+    print("--------------------------------------------------------")
+    print("CONECTATE CON UNA BASE DE DATOS__':('")
+    print("*************************************")
+    print("******* ERROR**********")
+    print("--------------------------------------------------------")
+    cn = input("escribe 'y' si es afirmativo _")
+
+    if(cn=="y"):
+        print(e)
+        
+    else:
+        print("listo terminé")

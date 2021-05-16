@@ -88,8 +88,8 @@
     z-index: 1555;    
     flex-wrap: wrap;
     /*display: none;*/
-    position: relative;
-    top:-800px;
+    position: absolute;
+    top: 00px;
     
 }
 
@@ -141,29 +141,8 @@
 
 }
 
-.boton_{
-    width: 100%;
-    height: 3.125rem;
-    text-align: center;
-    position: absolute;
-    top: 700px;
-    z-index: 11111;
-    
 
-}
-.boton_ a{
-    display: block;
-    width: 50%;
-    margin: auto;
-    background-color: var(--color-verde-viche);
-    height: 90%;
-    border-radius: 50px;
-    line-height: 3em;
-    text-decoration: none;
-    color: black;
-    
 
-}
 #diviciona{
     width: 100%;
     margin: 0 0 3.125em 0;
@@ -209,6 +188,9 @@
     background-color: var(--color-menu-hover);
     color:black;
 }
-
+/*tabla de clientes----------*/
+.Tabla_Clientes{
+    z-index: -1;
+}
 
 
