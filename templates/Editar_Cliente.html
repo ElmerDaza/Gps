@@ -1,6 +1,12 @@
 {%extends "Plantilla.html" %}
 {%block body%}
-    <h1 class="titulo">Ingrese contenido Solicitado</h1>
+<link rel="stylesheet" href="{{url_for('static', filename='css/editar_cliente_stilos.css')}}">
+    <h1 class="titulo">Esta editando informacion del usuario {{dat.1}}</h1>
+    <div class="cancelar_boton">
+        <a href="/Clientes" class="b_cancelar">
+            CANCELAR
+        </a>
+    </div>
     
     <form action="/Modificar/{{dat.0}}" method="POST">
         <div class="ContenedorN" id="">
@@ -32,20 +38,28 @@
                     <span class="contenido_Cedula">Cedula.</span>
                 </label>
             </div>
+
+            <div class="seccion">
+                <input type="text" name="ID" value="{{dat.5}}" autocomplete="off" required>
+                <label for="ID" class="Label_ID">
+                    <span class="contenido_ID">Codigo de seguridad</span>
+                </label>
+            </div>
             
             <div class="seccion">
-                <input type="text" name="Fecha_Afiliacion" value="{{dat.5}}" autocomplete="off" required>
+                <input type="text" name="Fecha_Afiliacion" value="{{dat.6}}" autocomplete="off" required>
                 <label for="Fecha_Afiliacion" class="LabelFecha_Afiliacion">
                     <span class="contenido_Fecha_Afiliacion">Fecha de afiliación.</span>
                 </label>
             </div>
+            <button type="submit" class="btn_guardar">
+                Guardar
+    
+            </button>
 
         </div>
 
-        <button type="submit" class="btn_guardar">
-            Guardar
-
-        </button>
+        
 
     </form>
 

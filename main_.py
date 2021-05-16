@@ -37,11 +37,12 @@ def client_new():
         telefono =  request.form['Telefono']
         correo =  request.form['Correo']
         Cedula = request.form['Cedula']
+        clave=request.form['ID']
         fecha = request.form['Fecha_Afiliacion']
         
 
         todo = [0,nombre,telefono,correo,
-        Cedula,fecha]
+        Cedula,clave,fecha]
         bd.Registrar(todo,'usuarios')
         return redirect("Clientes")
     
@@ -66,9 +67,10 @@ def Modificar(id):
         telefono =  request.form['Telefono']
         correo =  request.form['Correo']
         Cedula = request.form['Cedula']
+        Clave = request.form['ID']
         fecha = request.form['Fecha_Afiliacion']
 
-        todo = [nombre, telefono, correo, Cedula, fecha]
+        todo = [nombre, telefono, correo, Cedula,Clave,fecha]
         
         bd.Modificar_Usuario("usuarios",id,todo)
         

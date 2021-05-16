@@ -1,19 +1,9 @@
 :root{
-    --color-menu: rgba(0, 0, 255, 0.393);
-    --color-menu-hover:rgba(0, 0, 255, 0.562);
-    --color_submenu:rgba(0, 0, 0, 0.623);
-    --color-a-hover:white;
-    --color-fondo-encavezado: rgb(41, 41, 41);
-    --font-maquina-vieja:'Syne Mono', monospace;
-    --color-verde-viche: rgba(0, 255, 0, 0.897);
+    --color-de-img: #FF1C0D;
+    --color-azul-pagina: rgb(0, 0, 255);
+    --font-titulo: 'Dancing Script', cursive;
 }
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', sans-serif;
-
-}
-
+/*nav superior*/
 .Encabezado{
     width: 100%;
     height: 80px;
@@ -28,12 +18,6 @@
     transition: 1.5s;
     
 }
-
-
-#cursor{
-    background-color: var(--color-menu);
-}
-
 /*Lista-------------------------*/
 .La_lista{/*div*/
     padding: 0 15% 0 0;
@@ -41,8 +25,8 @@
 
 .La_lista ul li{
     list-style: none;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     
 }
 .La_lista ul li a{
@@ -55,57 +39,62 @@
     font-size: 1.3em;
     
 }
-.aparece{
-    display: none;
-}
-.apa{
-    display: none;
-}
 
-
-/*no hay contenido que mostrar*/
-.sin_contenido{
+/*titulo----------*/
+.titulo{
     text-align: center;
-    margin: 50px 0;
+    font-family: var(--font-titulo);
+    padding: 1.25rem 0;
+}
+/*boton cancelar------------*/
+.cancelar_boton{
+    width: 7.5rem;
+    height: 2.5rem;
+    text-align: center;
+    background-color: var(--color-de-img);
+    margin: 0.9375rem;
+    border-radius: 0.9375rem;
+    box-shadow: black 2px 2px 2px;
 
 }
-#no_hay_contenido{
-    width: 500px;
-    height: 500px;
+.b_cancelar{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height: 40px;
+
 }
 
-/*recoleccion de datos*/
-
-
-/*Contenido de datos*/
+/*EStilod de formulario----------------*/
 .ContenedorN{
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-left: 5%;
     background-color: rgba(0, 0, 0, 0.863);
-    height: 700px;
+    height: 300px;
     z-index: 1555;    
     flex-wrap: wrap;
     /*display: none;*/
-    position: absolute;
-    top: 00px;
+    
     
 }
 
 /* seccion de input-----------------------------------------------------------------*/
 .ContenedorN .seccion{
     width: 50%;
-    height: 55px;
+    height: 3.4375rem;
     position: relative;
 
 }
 .ContenedorN .seccion input{
-    height: 30px;
+    height: 1.875rem;
     width: 70%;
-    padding-top: 20px;
+    padding-top: 1.25rem;
     border: none;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .ContenedorN .seccion label{
     position: absolute;
@@ -129,63 +118,21 @@
 .ContenedorN .seccion input:focus
 + label [class*="contenido"]{
     transform: translateY(-100%);
-    font-size: 14px;
+    font-size: 0.875rem;
     
 
 }
 .ContenedorN .seccion label [class*="contenido"]{
     position: absolute;
-    bottom: 25px;
+    bottom: 1.5625rem;
     left: 0px;
     transition: all 0.5s ease;
 
 }
-
-
-
-#diviciona{
-    width: 100%;
-    margin: 0 0 3.125em 0;
+.btn_guardar{
+    width: 12.25rem;
+    height: 3.125rem;
+    background-color: green;
+    box-shadow: black 0.3125rem 0.3125rem 0.3125rem;
+    border-radius: 1.5625rem;
 }
-
-
-
-/*barra de acciones-------------------------*/
-.barra_acciones{
-    width: 100%;
-    height: 50px;
-    background-color: var(--color_submenu);
-    box-shadow: black 0px 5px 25px;
-    position: sticky;
-    top: 0px
-}
-.barra_acciones ul{
-    display: flex;
-    list-style: none;
-    margin: 0 0 0 100px;
-    
-}
-.barra_acciones ul li{
-    margin: 0 35px 0 0;
-    line-height: 1em;
-    width: 80px;
-}
-.barra_acciones ul li .a{
-    width: 100%;
-    height: 50%;
-    display: block;
-    text-decoration: none;
-    color: black;
-    background-color: var(--color-verde-viche);
-    margin: 12% 0 0 0;
-    border-radius: 25px;
-    padding: 5px;
-    cursor: pointer;
-    z-index: 900;
-
-}
-.barra_acciones  ul li .a:hover{
-    background-color: var(--color-menu-hover);
-    color:black;
-}
-/*tabla de clientes----------*/

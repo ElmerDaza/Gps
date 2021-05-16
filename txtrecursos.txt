@@ -11,5 +11,10 @@ https://undraw.co/illustrations
 python web.
 https://www.youtube.com/watch?v=IgCfZkR8wME
 
+---------------------------------------------
 curso de flask
 https://www.youtube.com/watch?v=utt4BL-HvD0&list=PLuB3bC9rWQAsHK6rL87Vz9mfMIlk4ewwL&index=3
+
+--------------------------------------------
+modificar registro en la base de datos
+https://www.youtube.com/watch?v=iLioViw3WwE

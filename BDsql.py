@@ -1,4 +1,5 @@
 import mysql.connector
+from mysql.connector import Error
 
 
 
@@ -11,7 +12,7 @@ def Conectar():
             password="",
             database="vigilantes"
             )
-    except Exception as e:
+    except Error as e:
         cn = input("escribe 'y' si es afirmativo _")
 
         if(cn=="y"):
@@ -34,7 +35,7 @@ def Consulta(tabla):
         mycursor.execute(sql)
 
         data = mycursor.fetchall()
-    except Exception as e:
+    except Error as e:
         print("|")
         print("|")
         print("|")
@@ -61,14 +62,13 @@ def Consulta_elimina(tabla,id):
         BD = Conectar()
         mycursor = BD.cursor()
         sql="DELETE FROM `usuarios` WHERE `ID_Usuarios` = ('"+id+"')"
-        print(sql)
         mycursor.execute(sql)
         mycursor.fetchall()
         BD.commit()
-        print("llegue aqui")
+        BD.close()
         
         
-    except Exception as e:
+    except Error as e:
         print("|")
         print("|")
         print("|")
@@ -97,7 +97,8 @@ def Consultar_Usuario(tabla,id):
         mycursor.execute(sql)
 
         data = mycursor.fetchall()
-    except Exception as e:
+        BD.close()
+    except Error as e:
         print("|")
         print("|")
         print("|")
@@ -124,15 +125,16 @@ def Modificar_Usuario(tabla,id, datos):
         BD = Conectar()
         mycursor = BD.cursor()
         
-        sql = "UPDATE `usuarios` SET `Nombre`= '{0}',`Telefono`= '{1}', `Correo`= '{2}', `Cedula`= '{3}',`Fecha_afiliacion`='{4}' WHERE ID_Usuarios = '{5}'".format(
-            datos[0],datos[1],datos[2],datos[3],datos[4],datos[5])
+        sql = "UPDATE `usuarios` SET `Nombre`= '{0}',`Telefono`= '{1}', `Correo`= '{2}', `Cedula`= '{3}',`Clave_Seguridad` = '{4}',`Fecha_afiliacion`='{5}' WHERE ID_Usuarios = '{6}'".format(
+            datos[0],datos[1],datos[2],datos[3],datos[4],datos[5],datos[6])
         
         mycursor.execute(sql)
         print(sql)
-        mycursor.fetchall()
+        BD.commit()
+        BD.close()
         
         
-    except Exception as e:
+    except Error as e:
         print("|")
         print("|")
         print("|")
@@ -160,10 +162,11 @@ def Nombre_Columnas(tabla):
         mycursor = coneccion.cursor()
         mycursor.execute("select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_SCHEMA = 'vigilantes' and TABLE_NAME = '"+tabla+"'")
         data = mycursor.fetchall()
-        print(data)
+        
+        
     
 
-    except Exception as e:
+    except Error as e:
         print("|")
         print("|")
         print("|")
@@ -200,9 +203,7 @@ def Registrar(ArrayValores,tabla):
             vin += "%s," 
 
         vin+="%s)"
-        print(vin)
         col=""
-        print(colum_name[0][0])
         
         for i in range(len(colum_name)-1):
             col+=format(colum_name[i][0])
@@ -210,15 +211,16 @@ def Registrar(ArrayValores,tabla):
 
         tam=len(colum_name)-1
         col+=format(colum_name[tam][0])
-        print(col)
+        
         sql = "INSERT INTO "+tabla+" ("+col+") VALUES "+vin
         
 
         
         mycursor.execute(sql, ArrayValores)
         BD.commit()
+        BD.close()
         
-    except Exception as e:
+    except Error as e:
         
         print("|")
         print("|")
@@ -256,7 +258,7 @@ def TablaNueva(columnasNAME,tablaNAME):
             +dec+" PRIMARY KEY (`id`)) ENGINE = InnoDB COMMENT = 'un comentario'"
             )
         print("ya cree la tabla _"+tablaNAME+" con las columnas _")
-    except Exception as e: 
+    except Error as e: 
         print("///////////////////////////////////////////////////")
         print("ocurrio un error registrando la tabla")
         print("///////////////////////////////////////////////////")
@@ -270,34 +272,3 @@ def TablaNueva(columnasNAME,tablaNAME):
         else:
            print("listo terminé")
             
-    
-
-
-try:
-    
-    BD = Conectar()
-    mycursor = BD.cursor()
-    
-    sql = "UPDATE `usuarios` SET `Nombre`= 'usuario',`Telefono`= '111', `Correo`= 'usuario@ejemplo.com', `Cedula`= '1114455889',`Fecha_afiliacion`='15/05/2021' WHERE ID_Usuarios = '26'"
-    mycursor.execute(sql)
-    print(sql)
-    mycursor.fetchall()
-    
-    
-except Exception as e:
-    print("|")
-    print("|")
-    print("|")
-    print("|")
-    print("--------------------------------------------------------")
-    print("CONECTATE CON UNA BASE DE DATOS__':('")
-    print("*************************************")
-    print("******* ERROR**********")
-    print("--------------------------------------------------------")
-    cn = input("escribe 'y' si es afirmativo _")
-
-    if(cn=="y"):
-        print(e)
-        
-    else:
-        print("listo terminé")
