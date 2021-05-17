@@ -18,3 +18,7 @@ https://www.youtube.com/watch?v=utt4BL-HvD0&list=PLuB3bC9rWQAsHK6rL87Vz9mfMIlk4e
 --------------------------------------------
 modificar registro en la base de datos
 https://www.youtube.com/watch?v=iLioViw3WwE
+
+--------------------------------------------
+estilos de checkbox y radiobutton
+https://www.youtube.com/watch?v=1-4RgF7AZJw

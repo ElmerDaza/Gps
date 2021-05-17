@@ -61,7 +61,10 @@ def Consulta_elimina(tabla,id):
     try:
         BD = Conectar()
         mycursor = BD.cursor()
-        sql="DELETE FROM `usuarios` WHERE `ID_Usuarios` = ('"+id+"')"
+        cadena = ""
+        for i in range(0,len(tabla)):
+            cadena+=tabla[i]
+        sql="DELETE FROM `{0}` WHERE `ID_{1}` = ('{2}')".format(tabla,cadena.capitalize(),id)
         mycursor.execute(sql)
         mycursor.fetchall()
         BD.commit()
@@ -91,9 +94,10 @@ def Consultar_Usuario(tabla,id):
     try:
         BD = Conectar()
         mycursor = BD.cursor()
-
-        sql = "SELECT * FROM {0} WHERE ID_Usuarios = {1}".format(tabla,id)
-
+        cadena = ""
+        for i in range(0,len(tabla)):
+            cadena+=tabla[i]
+        sql = "SELECT * FROM {0} WHERE ID_{1} = {2}".format(tabla,cadena.capitalize(),id)
         mycursor.execute(sql)
 
         data = mycursor.fetchall()
@@ -124,9 +128,12 @@ def Modificar_Usuario(tabla,id, datos):
         datos.append(format(id))
         BD = Conectar()
         mycursor = BD.cursor()
+        cadena = ""
+        for i in range(0,len(tabla)):
+            cadena+=tabla[i]
         
-        sql = "UPDATE `usuarios` SET `Nombre`= '{0}',`Telefono`= '{1}', `Correo`= '{2}', `Cedula`= '{3}',`Clave_Seguridad` = '{4}',`Fecha_afiliacion`='{5}' WHERE ID_Usuarios = '{6}'".format(
-            datos[0],datos[1],datos[2],datos[3],datos[4],datos[5],datos[6])
+        sql = "UPDATE `usuarios` SET `Nombre`= '{0}',`Telefono`= '{1}', `Correo`= '{2}', `Cedula`= '{3}',`Clave_Seguridad` = '{4}',`Fecha_afiliacion`='{5}' WHERE ID_{6} = '{7}'".format(
+            datos[0],datos[1],datos[2],datos[3],datos[4],datos[5],cadena.capitalize(),datos[6])
         
         mycursor.execute(sql)
         print(sql)
@@ -271,4 +278,3 @@ def TablaNueva(columnasNAME,tablaNAME):
            
         else:
            print("listo terminé")
-            

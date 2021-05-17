@@ -2,6 +2,7 @@
 {%block body%}
 <link rel="stylesheet" href="{{url_for('static', filename='css/nav_lateral_stile.css')}}">
 <link rel="stylesheet" href="{{url_for('static', filename='css/estilos_clientes.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/Nuevo_Registro.css')}}">
 <div class="Contenedor">
 
     <div class="tras" id="tras"><b>></b></div>
@@ -159,7 +160,9 @@
             <form action="/Cliente_Nuevo" method="POST">
                 
                 <div class="ContenedorN" id="">
-                    
+                    <h2 class="titulo">
+                        <b>Ingrese los datos solicitados.</b>
+                    </h2>
                     <div class="seccion">
                         <input type="text" name="Nombre_Completo" autocomplete="off" required>
                         <label for="Nombre_Completo" class="Label_Nombre_Completo">

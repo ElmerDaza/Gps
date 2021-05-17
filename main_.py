@@ -45,7 +45,8 @@ def client_new():
         Cedula,clave,fecha]
         bd.Registrar(todo,'usuarios')
         return redirect("Clientes")
-    
+   
+
 @app.route('/Eliminar/<string:id>')
 def delete(id):
 
@@ -75,6 +76,38 @@ def Modificar(id):
         bd.Modificar_Usuario("usuarios",id,todo)
         
         return redirect(url_for("Clientes"))
+
+@app.route('/Vehiculos')
+def Vehiculos():
+    dat=[]
+    name_columnas = bd.Nombre_Columnas("vehiculos")
+    cli = bd.Consulta("vehiculos")
+    for i in range(len(name_columnas)):
+        if i < len(name_columnas)-1:
+            #append añade un elemento a la lista
+            dat.append(format(name_columnas[i+1][0])) 
+    sin_contenido = True
+    if len(cli) !=0:
+        sin_contenido = False
+    return rt('Vehiculos.html', dat_colum=dat, vehiculos=cli,contenido=sin_contenido)
+
+@app.route('/Vehiculo_Nuevo', methods=['POST'])
+def vehicle_new():
+   
+    if request.method == 'POST':
+        placa = request.form['placa']
+        gps =  request.form['Modelo_GPS']
+        sim =  request.form['Numero_simcard']
+        vehiculo = request.form['Descripcion_Vehiculo']
+        dueño=request.form['Dueño_Vehiculo']
+        fecha = request.form['Fecha_Instalacion']
+        imei= request.form['Imei']
+        tipo = request.form['Tipo_Instalacion']
+
+        todo = [0,placa,gps,sim,vehiculo,dueño,imei,tipo,fecha]
+        bd.Registrar(todo,'vehiculos')
+        return redirect("Vehiculos")
+ 
 
 if __name__ == '__main__':
     app.run(port = 3000,debug= True)

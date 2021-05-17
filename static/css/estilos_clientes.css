@@ -3,7 +3,7 @@
     --color-menu: rgba(0, 0, 255, 0.393);
     --color-menu-hover:rgba(0, 0, 255, 0.562);
     --color_submenu:rgba(0, 0, 0, 0.623);
-    --color-a-hover:white;
+    --font-titulo: 'Dancing Script', cursive;
     --color-fondo-encavezado: rgb(41, 41, 41);
     --font-maquina-vieja:'Syne Mono', monospace;
     --color-verde-viche: rgba(0, 255, 0, 0.897);
@@ -11,7 +11,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    
 
 }
 /*------------encabezado------------*/
@@ -69,108 +69,6 @@
     width: 31.25rem;
     height: 31.25rem;
 }
-
-/*recoleccion de datos*/
-
-
-/*Contenido de datos*/
-.ContenedorN{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: 5%;
-    background-color: rgba(0, 0, 0, 0.863);
-    height: 43.75rem;
-    z-index: 1555;    
-    flex-wrap: wrap;
-    /*display: none;*/
-    position: absolute;
-    top: 00px;
-    
-}
-#salir{
-    
-    font-family: var(--font-maquina-vieja);
-    color: white;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    cursor: pointer;
-    
-}
-.salir{
-    text-align: center;
-    line-height: 3.125rem;
-    background-color: var(--color-de-img);
-    font-family: var(--font-maquina-vieja);
-    width: 12.25rem;
-    height: 3.125rem;
-    box-shadow: white 0.125rem 0.125rem 0.125rem;
-    border-radius: 1.5625rem;
-}
-
-/* seccion de input-----------------------------------------------------------------*/
-.ContenedorN .seccion{
-    width: 50%;
-    height: 3.4375rem;
-    position: relative;
-
-}
-.ContenedorN .seccion input{
-    height: 1.875rem;
-    width: 70%;
-    padding-top: 1.25rem;
-    border: none;
-    font-size: 1.25rem;
-}
-.ContenedorN .seccion label{
-    position: absolute;
-    margin: 0px;
-    bottom: 0px;
-    left: 0%;
-    width: 70%;
-    pointer-events: none;
-    border-bottom: 1px solid black;
-}
-.ContenedorN .seccion label::after{
-    content: "";
-    position: absolute;
-    left: 0px;
-    bottom: -1px;
-    height: 100%;
-    width: 100%;
-    border-bottom: rgba(0, 0, 0, 0.397) 3px solid;
-    
-}
-.ContenedorN .seccion input:focus
-+ label [class*="contenido"]{
-    transform: translateY(-100%);
-    font-size: 0.875rem;
-    
-
-}
-.ContenedorN .seccion label [class*="contenido"]{
-    position: absolute;
-    bottom: 1.5625rem;
-    left: 0px;
-    transition: all 0.5s ease;
-
-}
-
-.btn_guardar{
-    font-family: var(--font-maquina-vieja);
-    width: 12.25rem;
-    height: 3.125rem;
-    background-color: var(--color-verde-viche);
-    box-shadow: white 0.125rem 0.125rem 0.125rem;
-    border-radius: 1.5625rem;
-}
-
-#diviciona{
-    width: 100%;
-    margin: 0 0 3.125em 0;
-}
-
 
 
 /*barra de acciones-------------------------*/

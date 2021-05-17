@@ -1,247 +1,250 @@
 {%extends "Plantilla.html" %}
 {%block body%}
-    <div class="Encabezado">
-        <div class="logo">
-            <img src="../img/logo.jpg" class="logoImagen" alt="">
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav_lateral_stile.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/estilos_Vehiculos.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/Nuevo_Registro.css')}}">
+<div class="Contenedor">
 
-        </div>
-        <div class="menu">
-            <ul class="ListaMenu">
-                <li class="ItemMenu">
-                    <a href="index.html">Home
-                        <hr class="line">
-                    </a>
+    <div class="tras" id="tras"><b>></b></div>
+    <div class="Nav_Lateral" id="Nav_Lateral">
 
+        <div class="nav_lateral" id="nav_lateral">
 
+            <h2 class="Logo">
+                <a href="" class="logo">
+                    VIGILANTES-24/7
+                </a>
+            </h2>
+            <hr class="LineaCompleta">
+            <div class="Imagen">
+                <img src="{{ url_for('static', filename= 'img/logo.jpg')}}" alt="Vigilantes-24/7">
 
-
-                </li>
-                <li class="ItemMenu">
-                    <a href="#" id="cursor">Servicios
-                        <hr class="line">
-                    </a>
-
-
-                    <ul class="SubMenu">
-                        <li class="subMenuItem"><a href="#">
-                                Monitor
-                                <hr class="line">
-                            </a></li>
-                        <li class="subMenuItem"><a href="Control.html">
-                                Control
-                                <hr class="line">
-                            </a></li>
-                        <li class="subMenuItem"><a href="#">
-                                Registros
-                                <hr class="line">
-                            </a></li>
-                    </ul>
-                </li>
-                <li class="ItemMenu">
-                    <a href="#">Sobre Nosotros
-                        <hr class="line">
-                    </a>
-                </li>
-                <li class="ItemMenu">
-                    <a href="#">Contacto
-                        <hr class="line">
-                    </a>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-    <div class="Contenedor">
-
-        <div class="tras" id="tras"><b>></b></div>
-        <div class="Nav_Lateral" id="Nav_Lateral">
-
-            <div class="nav_lateral" id="nav_lateral">
-
-                <h2 class="Logo">
-                    <a href="" class="logo">
-                        VIGILANTES-24/7
-                    </a>
-                </h2>
-                <hr class="LineaCompleta">
-                <div class="Imagen">
-                    <img src="../img/logo.jpg" alt="Vigilantes-24/7">
-
-                </div>
-                <h3 class="NombreUsuario">
-                    Nombre de Usuario
-                    <hr class="LineaCorta">
-                </h3>
-                <div class="tres_iconos">
-                    <div class="Icono"><a href="">i*</a></div>
-                    <div class="Icono"><a href="">i-</a></div>
-                    <div class="Icono"><a href="">i+</a></div>
-                </div>
-
-                <hr class="LineaCompleta">
-
-                <div class="La_lista">
-                    <ul>
-                        <li><a href="">Materiales</a></li>
-                        <li><a href="">Lista de proyectos</a></li>
-                        <li><a href="">Actividades</a></li>
-                        <li><a href="">Costo de unidad de actividad</a></li>
-                    </ul>
-                </div>
+            </div>
+            <h3 class="NombreUsuario">
+                Nombre de Usuario
+                <hr class="LineaCorta">
+            </h3>
+            <div class="tres_iconos">
+                <div class="Icono"><a href="">i*</a></div>
+                <div class="Icono"><a href="">i-</a></div>
+                <div class="Icono"><a href="">i+</a></div>
             </div>
 
-        </div>
+            <hr class="LineaCompleta">
 
-    </div>
-    <div class="Contenido">
-
-        <div class="barra_acciones">
-            <ul>
-                <li>
-                    <div class="a" id="btn_nuevo">
-                        <span  >
-                            <b>Nuevo</b>
-    
-                        </span>
-                    </div>
-
-                </li>
-                <li class="apa">
-                    <div class="a">
-                        <b>Editar</b>
-                    </div>
-                </li>
-                <li class="apa">
-                    <div class="a">
-                        <b>Eliminar</b>
-                    </div>
-                </li>
-                <li class="apa">
-                    <div class="a">
-                        <b>Retirado</b>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="sin_contenido">
-            <h2>SIN CONTENIDO</h2>
-            <img src="../img/No_hay_contenido.svg" id="no_hay_contenido" alt="">
-        </div>
-
-        <div class="aparece" id="nuevoU">
-
-
-            <div class="ContenedorN" id="">
-                <div class="seccion">
-                    <input type="text" name="Nombre_Completo" autocomplete="off" required>
-                    <label for="Nombre_Completo" class="Label_Nombre_Completo">
-                        <span class="contenido_Nombre_Completo">Nombre Completo.</span>
-                    </label>
-                </div>
-                <div class="seccion">
-                    <input type="text" name="Telefono" autocomplete="off" required>
-                    <label for="Telefono" class="Label_Telefono">
-                        <span class="contenido_Telefono">Telefono.</span>
-                    </label>
-                </div>
-    
-    
-    
-    
-    
-                <div class="seccion">
-                    <input type="text" name="Correo" autocomplete="off" required>
-                    <label for="Correo" class="Label_Correo">
-                        <span class="contenido_Correo">Correo.</span>
-                    </label>
-                </div>
-                <div class="seccion">
-                    <input type="text" name="Tipo_GPS" autocomplete="off" required>
-                    <label for="Tipo_GPS" class="LabelTipo_GPS">
-                        <span class="contenido_Tipo_GPS">Tipo de GPS.</span>
-                    </label>
-                </div>
-    
-    
-    
-    
-    
-    
-                <div class="seccion">
-                    <input type="text" name="Numero_Sim_GPS" autocomplete="off" required>
-                    <label for="Numero_Sim_GPS" class="Label_Numero_Sim_GPS">
-                        <span class="contenido_Numero_Sim_GPS">Numero Sim GPS.</span>
-                    </label>
-                </div>
-                <div class="seccion">
-                    <input type="text" name="Pago_Mensual" autocomplete="off" required>
-                    <label for="Pago_Mensual" class="Label_Pago_Mensual">
-                        <span class="contenido_Pago_Mensual">Pago Mensual.</span>
-                    </label>
-                </div>
-    
-                <div class="seccion">
-                    <input type="text" name="Cedula" autocomplete="off" required>
-                    <label for="Cedula" class="Label_Cedula">
-                        <span class="contenido_Cedula">Cedula.</span>
-                    </label>
-                </div>
-                <div class="seccion">
-                    <input type="text" name="Estado" autocomplete="off" required>
-                    <label for="Estado" class="Label_Estado">
-                        <span class="contenido_Estado">Estado.</span>
-                    </label>
-                </div>
-    
-                <div class="seccion">
-                    <input type="text" name="ID" autocomplete="off" required>
-                    <label for="ID" class="Label_ID">
-                        <span class="contenido_ID">ID M2</span>
-                    </label>
-                </div>
-                <div class="seccion">
-                    <input type="text" name="Fecha_Afiliacion" autocomplete="off" required>
-                    <label for="Fecha_Afiliacion" class="LabelFecha_Afiliacion">
-                        <span class="contenido_Fecha_Afiliacion">Fecha de afiliación.</span>
-                    </label>
-                </div>
-    
-    
-                <div class="seccion">
-                    <input type="text" name="Marca_Vehiculo" autocomplete="off" required>
-                    <label for="Marca_Vehiculo" class="Label_Marca_Vehiculo">
-                        <span class="contenido_Marca_Vehiculo">Marca del vehiculo</span>
-                    </label>
-                </div>
-                <div class="seccion">
-                    <input type="text" name="PlacaV" autocomplete="off" required>
-                    <label for="PlacaV" class="LabelPlacaV">
-                        <span class="contenido_PlacaV">Placa del Vehiculo.</span>
-                    </label>
-                </div>
-                <div class="seccion">
-                    <input type="text" name="Color" autocomplete="off" required>
-                    <label for="Color" class="LabelColor">
-                        <span class="contenido_Color">Placa del Vehiculo.</span>
-                    </label>
-                </div>
-                <hr id="diviciona">
-    
-    
+            <div class="La_lista">
+                <ul>
+                    <li><a href="">Materiales</a></li>
+                    <li><a href="">Lista de proyectos</a></li>
+                    <li><a href="">Actividades</a></li>
+                    <li><a href="">Costo de unidad de actividad</a></li>
+                </ul>
             </div>
         </div>
 
-        
+    </div>
+</div>
+<div class="Contenido">
+
+    <div class="barra_acciones">
+        <ul>
+            <li>
+                <div class="a" id="btn_nuevo">
+                    <span>
+                        <b>Nuevo</b>
+
+                    </span>
+                </div>
+
+            </li>
+            <li class="apa">
+                <div class="a">
+                    <b>Editar</b>
+                </div>
+            </li>
+            <li class="apa">
+                <div class="a">
+                    <b>Eliminar</b>
+                </div>
+            </li>
+            <li class="apa">
+                <div class="a">
+                    <b>Retirado</b>
+                </div>
+            </li>
+        </ul>
+    </div>
+    {% if contenido == True%}
+    <div class="sin_contenido">
+
+        <h2>SIN CONTENIDO</h2>
+        <img src="{{url_for('static', filename='img/No_hay_contenido.svg')}}" id="no_hay_contenido" alt="">
+    </div>
+    {%else%}
+    <div class="tabla_clientes">
+        <table class="Tabla_Clientes">
+            <thead>
+                <tr>
+                    {%for i in dat_colum%}
+                    <td>
+                        {{i}}
+                    </td>
+                    {%endfor%}
+                    <td>
+                        Acción
+                    </td>
+                </tr>
 
 
-        <div class="boton_ aparece" id="btn_guardar">
-            <a href="#"  class="btn_guardar">
-                <b>Guardar</b>
-            </a>
+
+            </thead>
+            <tbody>
+
+                {%for i in vehiculos%}
+                <tr>
+                    <td>
+                        {{i.1}}
+                    </td>
+                    <td>
+                        {{i.2}}
+                    </td>
+                    <td>
+                        {{i.3}}
+                    </td>
+                    <td>
+                        {{i.4}}
+                    </td>
+                    <td>
+                        {{i.5}}
+                    </td>
+                    <td>
+                        {{i.6}}
+                    </td>
+                    <td>
+                        {{i.7}}
+                    </td>
+                    <td>
+                        {{i.8}}
+                    </td>
+                    <td>
+                        {{i.9}}
+                    </td>
+                    <td>
+                        {{i.10}}
+                    </td>
+                    <td>
+                        {{i.11}}
+                    </td>
+                    <td>
+                        {{i.12}}
+                    </td>
+                    <td>
+                        {{i.13}}
+                    </td>
+                    <td>
+                        <a href="/Editar/{{i.0}}">editar</a>
+                        <a href="/Eliminar/{{i.0}}">eliminar</a>
+                    </td>
+                </tr>
+
+                {%endfor%}
+
+            </tbody>
+        </table>
+    </div>
+    {%endif%}
+
+    <div class="aparece" id="nuevoU">
+        <div>
+            
+            <form action="/Vehiculo_Nuevo" method="POST">
+                
+                <div class="ContenedorN" id="">
+                    <h2 class="titulo">
+                        <b>Ingrese los datos solicitados.</b>
+                    </h2>
+                    <div class="seccion">
+                        <input type="text" name="placa" autocomplete="off" required>
+                        <label for="placa" class="Label_placa">
+                            <span class="contenido_placa">placa.</span>
+                        </label>
+                    </div>
+                    <div class="seccion">
+                        <input type="text" name="Modelo_GPS" autocomplete="off" required>
+                        <label for="Modelo_GPS" class="Label_Modelo_GPS">
+                            <span class="contenido_Modelo_GPS">Modelo_GPS.</span>
+                        </label>
+                    </div>
+
+                    <div class="seccion">
+                        <input type="text" name="Numero_simcard" autocomplete="off" required>
+                        <label for="Numero_simcard" class="Label_Numero_simcard">
+                            <span class="contenido_Numero_simcard">Numero_simcard.</span>
+                        </label>
+                    </div>
+
+                    <div class="seccion">
+                        <input type="text" name="Descripcion_Vehiculo" autocomplete="off" required>
+                        <label for="Descripcion_Vehiculo" class="Label_Descripcion_Vehiculo">
+                            <span class="contenido_Descripcion_Vehiculo">Descripcion_Vehiculo.</span>
+                        </label>
+                    </div>
+
+                    <div class="seccion">
+                        <input type="text" name="Dueño_Vehiculo" autocomplete="off" required>
+                        <label for="Dueño_Vehiculo" class="Label_Dueño_Vehiculo">
+                            <span class="contenido_Dueño_Vehiculo">Nombre_Cliente</span>
+                        </label>
+                    </div>
+                    <div class="seccion">
+                        <input type="text" name="Fecha_Instalacion" autocomplete="off" required>
+                        <label for="Fecha_Instalacion" class="Label_Fecha_Instalacion">
+                            <span class="contenido_Fecha_Instalacion">Fecha de Instalacion.</span>
+                        </label>
+                    </div>
+                    <div class="seccion">
+                        <input type="text" name="Imei" autocomplete="off" required>
+                        <label for="Imei" class="Label_Imei">
+                            <span class="contenido_Imei">Imei.</span>
+                        </label>
+                    </div>
+                    <div class="seccion_">
+                        <h4>Tipo de instalacion</h4>
+                        
+                        <input type="radio" name="Tipo_Instalacion" id="ins_sencilla" required>
+                        <label for="ins_sencilla">Sencilla</label>
+                        <input type="radio" name="Tipo_Instalacion" id="ins_reforzado" required>
+                        <label for="ins_reforzado">Reforzado</label>
+                    </div>
+
+                    <button type="submit" class="btn_guardar">
+                        Guardar
+
+                    </button>
+                    <div class="salir">
+                        <p id="salir">Cancelar</p>
+                    </div>
+                    
+                    <hr id="diviciona">
+
+
+                </div>
+
+            </form>
         </div>
 
+
     </div>
-    </div>
+
+
+
+
+
+
+
+</div>
+<script src="{{url_for('static', filename='js/menu.js')}}"></script>
+<script src="{{url_for('static', filename='js/NuevoVehiculo.js')}}"></script>
 
 
 {%endblock%}

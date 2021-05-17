@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/font.css')}}">
 </head>
 
-<body>
+<body id="content">
     <div class="Encabezado">
         <div class="logo">
             <img src="{{ url_for('static', filename='img/logo.jpg')}}" class="logoImagen" alt="">
@@ -24,7 +24,7 @@
         <div class="menu">
             <ul class="ListaMenu">
                 <li class="ItemMenu">
-                    <a href="#" id="cursor">
+                    <a href="/" id="cursor">
                         Home
                         <hr class="line">
                     </a>
