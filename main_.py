@@ -74,8 +74,8 @@ def Modificar(id):
         todo = [nombre, telefono, correo, Cedula,Clave,fecha]
         
         bd.Modificar_Usuario("usuarios",id,todo)
-        
         return redirect(url_for("Clientes"))
+        
 
 @app.route('/Vehiculos')
 def Vehiculos():
@@ -107,7 +107,26 @@ def vehicle_new():
         todo = [0,placa,gps,sim,vehiculo,dueño,imei,tipo,fecha]
         bd.Registrar(todo,'vehiculos')
         return redirect("Vehiculos")
- 
+
+@app.route('/Editar_Vehiculo/<id>')
+def EditVehicle(id):
+    respuesta = bd.Consultar_Usuario("vehiculos",id)
+    return rt("Editar_Vehiculo.html", dat=respuesta[0])
+
+@app.route('/Modificar_Vehiculo/<id>', methods=['POST'])
+def Modificar_Vehiculo(id):
+    placa = request.form['placa']
+    gps =  request.form['Modelo_GPS']
+    sim =  request.form['Numero_simcard']
+    vehiculo = request.form['Descripcion_Vehiculo']
+    dueño=request.form['Dueño_Vehiculo']
+    fecha = request.form['Fecha_Instalacion']
+    imei= request.form['Imei']
+    tipo = request.form['Tipo_Instalacion']
+    todo = [0,placa,gps,sim,vehiculo,dueño,imei,tipo,fecha]
+    bd.Modificar_Usuario("vehiculos",id,todo)
+    return redirect(url_for("Vehiculos"))
+
 
 if __name__ == '__main__':
     app.run(port = 3000,debug= True)

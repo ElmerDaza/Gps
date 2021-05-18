@@ -68,8 +68,6 @@
     flex-wrap: wrap;
     /*display: none;*/
     padding: 0.9375rem;
-    
-    
 }
 
 /* seccion de input-----------------------------------------------------------------*/
@@ -120,10 +118,61 @@
     transition: all 0.5s ease;
 
 }
+.seccion_{
+    width: 50%;
+    height: 3.75rem;
+    position: relative;
+    font-family: var(--font-maquina-vieja);
+    font-size: 1.25rem;
+}
+.seccion_ h4{
+    color: white;
+    font-family: var(--font-titulo);
+}
+.seccion_ input[type="radio"]{
+    display: none;
+}
+.seccion_ label{
+    color: white;
+    padding: 0.3125rem 0.3125rem 0.3125rem 2.5rem;
+    position: relative;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.8s ease;
+}
+.seccion_ label:hover{
+    background-color: rgba(128, 128, 128, 0.384);
+}
+/*before incluye un elemento justo antes de la etiqueta seleccionada*/
+.seccion_ label::before{
+    content: "";
+    width: 0.9375rem;
+    height: 0.9375rem;
+    display: inline-block;
+    background: none;
+    border: 3px solid white;
+    position: absolute;
+    left: 1px;
+    top: 0.625rem;
+}
+/* esto espesifica que cuando input este seleccionado':checked' aplique cambios a lo indicado '+ label'*/
+.seccion_ input[type="radio"]:checked + label{
+    padding: 0.3125rem 0.3125rem;
+    background: var(--color-menu);
+    border-radius: 0.1875rem;
+    color: black;
+}
+.seccion_ input[type="radio"]:checked + label::before{
+    display: none;
+}
+
+
 .btn_guardar{
     width: 12.25rem;
     height: 3.125rem;
     background-color: var(--color-verde-viche);
     box-shadow: black 0.3125rem 0.3125rem 0.3125rem;
     border-radius: 1.5625rem;
+    margin-top: 30px;
 }

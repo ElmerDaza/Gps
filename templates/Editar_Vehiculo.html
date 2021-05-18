@@ -1,0 +1,87 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/editar_stilos.css')}}">
+    <h1 class="titulo">Esta editando informacion del vehiculo con placa: {{dat.1}}</h1>
+    <div class="cancelar_boton">
+        <a href="/Clientes" class="b_cancelar">
+            CANCELAR
+        </a>
+    </div>
+    
+    <form action="/Modificar_Vehiculo/{{dat.0}}" method="POST">
+        <div class="ContenedorN" id="">
+
+            <div class="seccion">
+                <input type="text" name="placa" autocomplete="off" value="{{dat.1}}"required>
+                <label for="placa" class="Label_placa">
+                    <span class="contenido_placa">placa.</span>
+                </label>
+            </div>
+            <div class="seccion">
+                <input type="text" name="Modelo_GPS" autocomplete="off" value="{{dat.2}}"required>
+                <label for="Modelo_GPS" class="Label_Modelo_GPS">
+                    <span class="contenido_Modelo_GPS">Modelo_GPS.</span>
+                </label>
+            </div>
+
+            <div class="seccion">
+                <input type="text" name="Numero_simcard" autocomplete="off" value="{{dat.3}}" required>
+                <label for="Numero_simcard" class="Label_Numero_simcard">
+                    <span class="contenido_Numero_simcard">Numero_simcard.</span>
+                </label>
+            </div>
+
+            <div class="seccion">
+                <input type="text" name="Descripcion_Vehiculo" autocomplete="off" value="{{dat.4}}" required>
+                <label for="Descripcion_Vehiculo" class="Label_Descripcion_Vehiculo">
+                    <span class="contenido_Descripcion_Vehiculo">Descripcion_Vehiculo.</span>
+                </label>
+            </div>
+
+            <div class="seccion">
+                <input type="text" name="Dueño_Vehiculo" autocomplete="off" value="{{dat.5}}" required>
+                <label for="Dueño_Vehiculo" class="Label_Dueño_Vehiculo">
+                    <span class="contenido_Dueño_Vehiculo">Nombre_Cliente</span>
+                </label>
+            </div>
+            <div class="seccion">
+                <input type="text" name="Fecha_Instalacion" autocomplete="off" value="{{dat.8}}" required>
+                <label for="Fecha_Instalacion" class="Label_Fecha_Instalacion">
+                    <span class="contenido_Fecha_Instalacion">Fecha de Instalacion.</span>
+                </label>
+            </div>
+            <div class="seccion">
+                <input type="text" name="Imei" autocomplete="off" value="{{dat.6}}" required>
+                <label for="Imei" class="Label_Imei">
+                    <span class="contenido_Imei">Imei.</span>
+                </label>
+            </div>
+            <div class="seccion_">
+                <h4>Tipo de instalacion</h4>
+                
+                <input type="radio" name="Tipo_Instalacion" id="ins_sencilla" required>
+                <label for="ins_sencilla">Sencilla</label>
+                <input type="radio" name="Tipo_Instalacion" id="ins_reforzado" required>
+                <label for="ins_reforzado">Reforzado</label>
+            </div>
+
+            <button type="submit" class="btn_guardar">
+                Guardar
+
+            </button>
+
+        </div>
+
+        
+
+    </form>
+
+    <div class="mensage">
+        <p class="parrafo_mensage">
+            La informacion que esta por modificar no se podra 
+            recuperar en el futuro, debe estar seguro de los cambios que quiere guardar.
+        </p>
+    </div>
+
+    
+{%endblock%}

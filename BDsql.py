@@ -125,16 +125,26 @@ def Consultar_Usuario(tabla,id):
 def Modificar_Usuario(tabla,id, datos):
     try:
         #append añade un elemento a la lista
-        datos.append(format(id))
+        #datos.append(format(id))
         BD = Conectar()
         mycursor = BD.cursor()
-        cadena = ""
+        cadena_tabla = ""
         for i in range(0,len(tabla)):
-            cadena+=tabla[i]
+            cadena_tabla+=tabla[i]
+
+        colum = Nombre_Columnas(tabla)
+
         
-        sql = "UPDATE `usuarios` SET `Nombre`= '{0}',`Telefono`= '{1}', `Correo`= '{2}', `Cedula`= '{3}',`Clave_Seguridad` = '{4}',`Fecha_afiliacion`='{5}' WHERE ID_{6} = '{7}'".format(
-            datos[0],datos[1],datos[2],datos[3],datos[4],datos[5],cadena.capitalize(),datos[6])
-        
+        declaracion = "UPDATE `{0}` SET `ID_{1}`='{2}', ".format(tabla,cadena_tabla.capitalize(),id)
+
+        for i in range(1,len(colum)):
+            declaracion+= "`{0}`='{1}', ".format(colum[i][0],datos[i-1])
+        #_______________________
+        #borrar el ultimo caracter del string
+        declaracion=declaracion[:-1]
+        sql=declaracion[:-1]
+        sql+=" WHERE ID_{0}={1}".format(cadena_tabla.capitalize(),id)
+        print(sql)
         mycursor.execute(sql)
         print(sql)
         BD.commit()
