@@ -1,0 +1,106 @@
+:root{
+    --color-rojo-primario: #FF1C0D;
+    
+    --color-azul-fuerte: rgba(0, 0, 255, 0.393);
+    --color-azul-hover:rgba(0, 0, 255, 0.562);
+    --color-negro-translucido:rgba(0, 0, 0, 0.623);
+    --font-titulo: 'Dancing Script', cursive;
+    --font-maquina-vieja:'Syne Mono', monospace;
+    --color-verde-viche: rgba(0, 255, 0, 0.897);
+    --background-buscador:rgba(168, 167, 167, 0.521);
+    
+    --color-status-activo:var(--color-verde-viche);
+    --color-status-pendiente: rgb(248, 252, 26);
+    --color-status-suspendido:var(--color-rojo-primario);
+    --color-text:rgb(32, 27, 27);
+}
+.material-icons{
+    font-size: 0.9375rem;
+}
+.Tabla_Container{
+    font-family: var(--font-maquina-vieja);
+    background-color: rosybrown;
+    border-radius: 5px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0.75rem;
+}
+.Tabla_Container .herramientas{
+    border-bottom: solid 2px var(--color-verde-viche);
+    padding: 5px;
+    display: flex;
+    align-items: baseline;
+
+}
+.Tabla_Container .herramientas .buscador{
+    width: 30%;
+}
+.Tabla_Container .herramientas .buscador input{
+    width: 100%;
+    background-color: var(--background-buscador);
+    display: block;
+    /*box - sizing para que no se desborde por el tamaño*/
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: white;
+    border:solid 1px var(--color-verde-viche);
+
+}
+.Tabla_Container .herramientas .tools{
+    width: 70%;
+}
+.Tabla_Container .herramientas .tools ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+}
+.Tabla_Container .herramientas .tools ul li{
+    display: inline-block;
+    margin: 0 5px;
+    align-items: baseline;
+}
+.Tabla_Container .footer_tabla{
+    padding: 5px;
+    display: flex;
+    align-items: baseline;
+}
+.Tabla_Container .footer_tabla .lista_items{
+    width: 50%;
+}
+.Tabla_Container .footer_tabla .paginas{
+    margin-right: auto;
+    margin-right: 0;
+    width: 50%;
+}
+.Tabla_Container .footer_tabla .paginas ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+.Tabla_Container .footer_tabla .paginas ul li{
+    display: inline-block;
+    margin: 0 5px;
+}
+.Tabla_Container .herramientas .tools ul li button,
+.Tabla_Container .footer_tabla .paginas ul li button{
+    color: var(--color-text);
+    width: 100%;
+    box-sizing: border-box;
+    border:0;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+}
+.Tabla_Container .herramientas .tools ul li button:hover,
+.Tabla_Container .footer_tabla .paginas ul li button:hover{
+    background: var(--color-azul-hover);
+    color: var(--color-rojo-primario);
+}
+.Tabla_Container .footer_tabla .paginas ul li span.active{
+    background: var(--color-azul-hover);
+    color: var(--color-rojo-primario);
+}

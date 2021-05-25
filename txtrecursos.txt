@@ -22,3 +22,7 @@ https://www.youtube.com/watch?v=iLioViw3WwE
 --------------------------------------------
 estilos de checkbox y radiobutton
 https://www.youtube.com/watch?v=1-4RgF7AZJw
+
+-----------------------------------------
+estilos de las tablas
+https://www.youtube.com/watch?v=pmd2_sI6iIU&t=70s

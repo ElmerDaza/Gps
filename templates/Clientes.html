@@ -3,6 +3,8 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/nav_lateral_stile.css')}}">
 <link rel="stylesheet" href="{{url_for('static', filename='css/estilos_clientes.css')}}">
 <link rel="stylesheet" href="{{url_for('static', filename='css/Nuevo_Registro.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="{{url_for('static', filename='css/estilos_tabla.css')}}">
 <div class="Contenedor">
 
     <div class="tras" id="tras"><b>></b></div>
@@ -81,11 +83,51 @@
         <img src="{{url_for('static', filename='img/No_hay_contenido.svg')}}" id="no_hay_contenido" alt="">
     </div>
     {%else%}
-    <div class="tabla_clientes">
-        <table class="Tabla_Clientes">
+    <div class="Tabla_Container">
+        <div class="herramientas">
+            <div class="tools">
+                <ul>
+                    <li>
+                        <span><input type="checkbox"></span>
+                    </li>
+                    <li>
+                        <button>
+                            <b class="material-icons">add_circle</b>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <b class="material-icons">edit</b>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <b class="material-icons">delete</b>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <b class="material-icons">share</b>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="buscador">
+                <input type="text">
+            </div>
+        </div>
+        
+        <table >
             <thead>
                 <tr>
                     {%for i in dat_colum%}
+                    <td class="check_tabla">
+                        <span><input type="checkbox" name="" id=""></span>
+                    </td>
+                    <td>
+                        <b>Estado</b>
+                    </td>
                     <td>
                         {{i}}
                     </td>
@@ -102,6 +144,12 @@
 
                 {%for i in Clientes%}
                 <tr>
+                    <td class="check_tabla">
+                        <span><input type="checkbox" name="" id=""></span>
+                    </td>
+                    <td>
+                        <span class="estado"></span>
+                    </td>
                     <td>
                         {{i.1}}
                     </td>
@@ -151,14 +199,33 @@
 
             </tbody>
         </table>
+        <div class="footer_tabla">
+            <div class="lista_items">
+                <select name="n-entradas" id="n-entradas">
+                    <option value="15">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
+            <div class="paginas">
+                <ul>
+                    <li><button>2</button></li>
+                    <li><button>2</button></li>
+                    <li><button>2</button></li>
+                    <li><span>...</span></li>
+                    <li><button>2</button></li>
+                    <li><button>2</button></li>
+                </ul>
+            </div>
+        </div>
     </div>
     {%endif%}
 
     <div class="aparece" id="nuevoU">
         <div>
-            
+
             <form action="/Cliente_Nuevo" method="POST">
-                
+
                 <div class="ContenedorN" id="">
                     <h2 class="titulo">
                         <b>Ingrese los datos solicitados.</b>
@@ -214,7 +281,7 @@
                     <div class="salir">
                         <p id="salir">Cancelar</p>
                     </div>
-                    
+
                     <hr id="diviciona">
 
 
