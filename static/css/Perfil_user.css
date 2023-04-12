@@ -1,0 +1,63 @@
+.Estado_Cuenta{
+    margin: 50px 25px;
+}
+.Estado_Cuenta h2{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+.Estado_Cuenta div p{
+    width: 100%;
+    text-align: center;
+    height: auto;
+}
+.Estado_Cuenta div{
+    justify-content: space-evenly;
+}
+.Estado_Cuenta div div{
+    width: 120px;
+    color: white;
+    padding: 19px;
+    border-radius: 8px;
+}
+.Perfil_title{
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+.primero_{
+    text-align: right;
+}
+.img_center{
+    /*background-image: url('../img/user.svg');*/
+    width: 100%;
+    height: 150px;
+    
+}
+.btn{
+    margin: 2px 50px;
+    color: white;
+    width: 200px;
+    padding: 10px;
+}
+.perfil_usuario{
+    padding: 50px 20px 15px 20px;
+
+}
+.barra_ventanas{
+    background: darkslategrey;
+    width: 100%;
+    height: 70px;
+    box-shadow: black 2px 1px 2px;
+    line-height: 50px;
+}
+.padding_15 span{
+    background: white;
+    border-radius: 15px;
+    box-shadow: blueviolet 2px 2px 1px;
+    cursor: pointer;
+    padding: 10px;
+    transition: 1s;
+}
+.padding_15 span:hover{
+    font-size: x-large;
+}

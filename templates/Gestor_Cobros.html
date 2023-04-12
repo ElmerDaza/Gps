@@ -1,0 +1,60 @@
+{%extends "plantilla.html"%}
+{%block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/estilos_control.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/Gestor_Cobros.css')}}">
+<div class="contenido">
+    <div class="title">
+        <h1>GESTOR DE COBROS</h1>
+    </div>
+    <div class="container">
+        <div class="contenedor_1">
+            <h3 class="sub_title">RESUMEN</h3>
+            <p class="resumen">En esta pagina podras hacer cobros mendiante whatsapp y correo
+                electronico; selecciona la configuracionantes de presionar el boton.
+            </p>
+        </div>
+        <form action="/Cobranza/" method="post" id="form_action">
+            <div class="contenedor_2">
+                <div>
+                    <div class="controles">
+                        <input class="controles" type="radio" name="tipo" id="cob_especifico" onclick="dia_unico()"
+                            value="cobrar_especifico" required>
+                        <label id="cob_" for="cob_especifico">Cobrar dia especifico</label>
+                    </div>
+                    
+                    <div class="controles">
+                        <input class="controles" checked type="radio" name="tipo" id="cob_actual"
+                            onclick="cobro_actual()" value="cobrar_dia_actual" required>
+                        <label for="cob_actual">Cobro dia actual</label>
+                    </div>
+
+                </div>
+                <div class="btn_selection">
+                    <button onclick="cobro_action('Cobro_wap');cargando()" class="cobro_wap" id="cobro_wap">
+                        <a>Cobrar wap</a>
+                    </button>
+                    <button onclick="cobro_action('Cobro_email');cargando()" class="cobro_email" id="cobro_email">
+                        <a>Cobro email</a>
+                    </button>
+                </div>
+                <button onclick="cobro_action('Cobro_Dual');cargando()" class="cobro_dual">
+                    <p>Cobro Dual</p>
+                </button>
+
+
+
+            </div>
+            <div>
+                <div style="transition: all 0.8s ease;" class="off" id="inp_">
+                    <input value="1" size="2" max="30" min="1" type="number" name="dia_cobranza" id="inp_dia" class="">
+                    <label for="inp_dia"><b>Coloque el dia a cobrar</b> </label>
+                </div>
+                <div><a href="/">Revisar Registros.</a></div>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+<script src="../static/js/Gestor_Cobros.js"></script>
+{%endblock%}

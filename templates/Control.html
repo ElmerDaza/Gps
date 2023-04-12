@@ -1,0 +1,271 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/estilos_control.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav_lateral_stile.css')}}">
+<div class="Contenedor">
+    <div class="tras" id="tras"><b>></b></div>
+    <div class="Nav_Lateral" id="Nav_Lateral">
+
+        <div class="nav_lateral" id="nav_lateral">
+
+            <h4 class="Logo">
+                <a href="" class="logo">
+                    VIGILANTES-24/7
+                </a>
+            </h4>
+            <hr class="LineaCompleta">
+            <div class="Imagen">
+                <img src="{{ url_for('static', filename= 'img/logo.jpg')}}" alt="Vigilantes-24/7">
+
+            </div>
+            <!--<h3 class="NombreUsuario">
+                Nombre de Usuario
+                <hr class="LineaCorta">
+            </h3>-->
+            <div class="tres_iconos">
+                <div class="Icono"><a href="">i*</a></div>
+                <div class="Icono"><a href="">i-</a></div>
+                <div class="Icono"><a href="">i+</a></div>
+            </div>
+
+            <hr class="LineaCompleta">
+
+            <div class="La_lista">
+                <ul>
+                    <li><a href="/Clientes">Usuarios</a></li>
+                    <li><a href="/Vehiculos">Vehiculos</a></li>
+                    <li><a href="/Crear_Factura">Facturacion</a></li>
+                    <li><a href="#">Informacion Rapida</a></li>
+                    <li><a href="#">MAS</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="Contenido">
+
+    <h1 class="Titulo">Bienvenido al control de operaciones</h1>
+
+
+    <h2>Manejo de Operaciones</h2>
+    <div class="seccion">
+
+        <div class="item">
+            <img id="id_imagen" src="{{ url_for('static', filename='img/informacion_instantanea.svg')}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Información Rapida.</b>
+                </li>
+                <li class="it">
+                    Puedes consultar informacion de cualquier cliente o vehiculo.
+
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a href="/Admin_Fac">
+                    Continuar
+                </a>
+            </div>
+        </div>
+        <div class="item">
+
+
+            <img id="id_imagen" src="{{ url_for('static', filename='img/segundo.svg' )}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Clientes.</b>
+                </li>
+                <li class="it">
+                    Edita, elimina o crea un nuevo clientes en la base de datos, puedes consultar todo.
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a onclick="cargando()" href="/Clientes">
+                    Continuar
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img id="id_imagen" src="{{url_for('static', filename= 'img/tercero.svg')}}" alt="imagen tercera">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Vehiculos</b>
+                </li>
+                <li class="it">
+                    Edita, elimina o asigna un nuevo vehiculo en la base de datos.
+
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a onclick="cargando()" href="/Vehiculos">
+                    Continuar
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img id="id_imagen" src="{{ url_for('static', filename='img/Cuarto.svg')}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Facturacion</b>
+                </li>
+                <li class="it">
+                    Edita, elimina o asigna una factura a un cliente de la base de datos.
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a href="/Crear_Factura">
+                    Continuar
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <h2>Contabilidad</h2>
+    <div class="seccion">
+
+        <div class="item">
+            <img id="id_imagen" src="{{ url_for('static', filename='img/graficas.svg')}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Graficas</b>
+                </li>
+                <li class="it">
+                    Visualiza y grafica la información almacenada en la base de datos
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a href="/graficas">
+                    <b>Continuar</b>
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img id="id_imagen" src="{{ url_for('static', filename='img/facturacion_recurrente.svg')}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Costos de Operación.</b>
+                </li>
+                <li class="it">
+                    define y organiza los costos y gastos de operación mensual
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a href="#">
+                    <b>Continuar</b>
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img id="id_imagen" src="{{ url_for('static', filename='img/undraw_Master_plan_re_jvit.svg')}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Ventas</b>
+                </li>
+                <li class="it">
+                    Controla todas las cantidades vendidas y en stock.
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a href="#">
+                    Continuar
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img id="id_imagen" src="{{ url_for('static', filename='img/un_usuario.svg')}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Cuentas.</b>
+                </li>
+                <li class="it">
+                    Controla y visualiza todos los ingresos y egresos.
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a href="/Admin_Caja">
+                    Continuar
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <h2>Inventarios</h2>
+    <div class="seccion">
+
+        <div class="item">
+            <img id="id_imagen" src="{{ url_for('static', filename='img/cantidades.svg')}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Cantidades</b>
+                </li>
+                <li class="it">
+                    Manejo de Productos en venta y descripcion de cobros.
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a href="#">
+                    Continuar
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img id="id_imagen" src="{{ url_for('static', filename='img/precios.svg')}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Precios.</b>
+                </li>
+                <li class="it">
+                    Puedes cambiar los datos referente a precios e impuestos.
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a href="#">
+                    Continuar
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img id="id_imagen" src="{{ url_for('static', filename='img/tercero.svg')}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">
+                    <b>Productos</b>
+                </li>
+                <li class="it">
+                    Registra, edita o elimina productos en stock.
+                </li>
+            </ul>
+            <div class="boton_seccion">
+                <a href="/Productos">
+                    Continuar
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img id="id_imagen" src="{{url_for('static', filename='img/facturacion_recurrente.svg')}}" alt="">
+            <ul class="seccion_item">
+                <li class="it">Cobranza</li>
+                <li class="it">
+                    Envia recordatorios de pago mediante whatsapp y correo electronico.
+                </li>
+            </ul>
+            <div  class="boton_seccion">
+                <a onclick="cargando()" href="Gestor_Cobros">
+                    Continuar
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<script src="{{url_for('static', filename='js/menu.js')}}"></script>
+
+{%endblock%}

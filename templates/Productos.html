@@ -1,0 +1,232 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="../static/css/colores_basicos.css">
+<link rel="stylesheet" href="../static/css/Producto.css">
+<link rel="stylesheet" href="../static/css/styles.css">
+<div class="fondo_gris contenido">
+
+    <div class="Registrar_producto margin_aa_15">
+        <div class="margin_abajo_15 fondo_azul registrar_producto_titulo">
+            <h3>Registrar Producto.</h3>
+        </div>
+    
+    
+        <div>
+            <form action="/Producto_Nuevo" method="POST">
+    
+                <div class="" id="">
+                    <h2 class="titulo margin_abajo_15">
+                        <b>Ingrese los datos solicitados.</b>
+                    </h2>
+                    <div class="flex wrap margin_abajo_15 ContenedorNuevo"> 
+                        <!--<div class="seccion margin_aa_15">
+                            <input type="text" name="Codigo" autocomplete="off" required minlength="4" maxlength="4" pattern="[0-9]+">
+                            <label for="Codigo" class="Label_Codigo">
+                                <span class="contenido_Codigo">Codigo.</span>
+                            </label>
+                        </div>-->
+                        <div class="seccion margin_aa_15">
+                            <input type="text" name="Descripcion" autocomplete="off" required>
+                            <label for="Descripcion" class="Label_Descripcion">
+                                <span class="contenido_Descripcion">Descripcion.</span>
+                            </label>
+                        </div>
+        
+        
+        
+        
+        
+                        <div class="seccion margin_aa_15">
+                            <input type="text" name="Precio" autocomplete="off" required pattern="[0-9]+">
+                            <label for="Precio" class="Label_Precio">
+                                <span class="contenido_Precio">Precio.</span>
+                            </label>
+                        </div>
+        
+                        <div class="seccion margin_aa_15">
+                            <input type="text" name="Existencia" autocomplete="off" required pattern="[0-9]+">
+                            <label for="Existencia" class="Label_Existencia">
+                                <span class="contenido_Existencia">Existencia.</span>
+                            </label>
+                        </div>
+        
+                        <button type="submit" class="btn_guardar fondo_verde margin_abajo_15">
+                            Guardar
+        
+                        </button>
+        
+        
+                    </div>
+                    
+                </div>
+    
+            </form>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+    <div class="Productos_Lista">
+        <div class="Buscador_producto margin_aa_15 margin_lados_15">
+            <input type="text" name="Buscar" autocomplete="off" class="input_buscar margin_lados_15 valor">
+            <label for="Buscar" class="Label_Buscar">
+                <span class="contenido_Buscar"> <b>Buscar</b></span>
+            </label>
+        </div>
+
+
+
+
+        <div class="Contenedor_tabla_productos">
+            {% if contenido == True%}
+            <div class="sin_contenido">
+
+                <h2>SIN CONTENIDO</h2>
+                <img src="{{url_for('static', filename='img/No_hay_contenido.svg')}}" id="no_hay_contenido" alt="">
+            </div>
+            {%else%}
+
+            <table >
+                <thead>
+                    <tr id="cabeza">
+                        <th class="table-checkbox fondo_negro font_blanco borde_tabla">
+                            <span><input type="checkbox" name="" id=""></span>
+                        </th>
+                        <th class="fondo_negro font_blanco borde_tabla">
+                            Estado
+                        </th>
+                        {%for i in dat_colum%}
+                        <th class="fondo_negro font_blanco borde_tabla">
+                            {{i}}
+                        </th>
+                        {%endfor%}
+                        <th class="fondo_negro font_blanco borde_tabla">
+                            Acción
+                        </th>
+                    </tr>
+    
+    
+    
+                </thead>
+                <tbody id="body" class="fondo_azul">
+    
+                    {%for i in Clientes%}
+                    <tr id="trbody{{i.0}}" >
+                        <td class="table-checkbox borde_tabla">
+                            <input type="checkbox" name="" id="">
+                        </td>
+                        <td class="borde_tabla">
+                            <span class="estado"></span>
+                        </td>
+                        <td class="borde_tabla">
+                            {{i.0}}
+                        </td>
+                        <td class="filtro borde_tabla">
+                            {{i.1}}
+                        </td>
+                        <td class=" borde_tabla">
+                            {{i.2}}
+                        </td>
+                        <td class=" borde_tabla">
+                            {{i.3}}
+                        </td>
+                        
+                        
+                        <td class="borde_tabla">
+                            <a class="fondo_verde boton_editar margin_15 padding_lados_15 font_blanco" href="/Editar_producto/{{i.0}}">editar</a>
+                            <a class="fondo_rojo boton_eliminar margin_15 padding_lados_15 font_blanco" href="/Eliminar_producto/{{i.0}}">eliminar</a>
+                        </td>
+                    </tr>
+    
+                    {%endfor%}
+    
+                </tbody>
+            </table>
+            
+            {%endif%}
+        </div>
+
+    </div>
+
+    <div class="editar_producto">
+        <div>
+            <span></span><h3>:Editar Producto</h3>
+        </div>
+
+
+
+
+        <div>
+
+            <form action="/Edit" method="POST">
+
+                <div class="ContenedorN" id="">
+                    <h2 class="titulo">
+                        <b>Ingrese los datos solicitados.</b>
+                    </h2>
+                    <div class="seccion">
+                        <input type="text" name="Nombre_Completo" autocomplete="off" required>
+                        <label for="Nombre_Completo" class="Label_Nombre_Completo">
+                            <span class="contenido_Nombre_Completo">Nombre Completo.</span>
+                        </label>
+                    </div>
+                    <div class="seccion">
+                        <input type="text" name="Telefono" autocomplete="off" required>
+                        <label for="Telefono" class="Label_Telefono">
+                            <span class="contenido_Telefono">Telefono.</span>
+                        </label>
+                    </div>
+    
+    
+    
+    
+    
+                    <div class="seccion">
+                        <input type="text" name="Correo" autocomplete="off" required>
+                        <label for="Correo" class="Label_Correo">
+                            <span class="contenido_Correo">Correo.</span>
+                        </label>
+                    </div>
+    
+                    <div class="seccion">
+                        <input type="text" name="Cedula" autocomplete="off" required>
+                        <label for="Cedula" class="Label_Cedula">
+                            <span class="contenido_Cedula">Cedula.</span>
+                        </label>
+                    </div>
+    
+                    <div class="seccion">
+                        <input type="text" name="ID" autocomplete="off" required>
+                        <label for="ID" class="Label_ID">
+                            <span class="contenido_ID">Codigo de seguridad</span>
+                        </label>
+                    </div>
+                    
+    
+                    <button type="submit" class="btn_guardar">
+                        Guardar
+    
+                    </button>
+                    
+    
+                    <hr id="diviciona">
+    
+    
+                </div>
+    
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script src="{{url_for('static', filename='js/filtroTabla.js')}}"></script>
+
+{%endblock%}

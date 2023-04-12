@@ -1,0 +1,394 @@
+:root{
+    --color-menu: rgba(0, 0, 255, 0.393);
+    --color-menu-hover:rgba(0, 0, 255, 0.562);
+    --color_submenu:rgba(0, 0, 0, 0.623);
+    --color-a-hover:white;
+    --color-fondo-encavezado: rgb(41, 41, 41);
+    --font-maquina-vieja:'Syne Mono', monospace;
+    --color-verde-viche: rgba(0, 255, 0, 0.897);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+
+}
+
+.Encabezado{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-image: url("../img/sat.png");
+    background-position:15px -135px;
+    background-size: cover;
+    background-color: var(--color-fondo-encavezado);
+    padding: 30px 0 30px 30px;
+    /*background-color:rgba(0, 0, 136, 0.555);*/
+    transition: 1.5s;
+    
+}
+.tras{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 30px;
+    
+    z-index: 200;
+    
+    
+    border-radius: 50%;
+    background-color: var(--color-menu);
+    cursor: pointer;
+    box-shadow: -10px -10px 19px white;
+    
+    position: fixed;
+    transition: linear 1.7s;
+}
+.tras:hover{
+    background-color: var(--color_submenu);
+}
+
+.logo{
+    width: 10%;
+    height: 100px;
+    z-index: 50;
+
+}
+.logoImagen{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    box-shadow: white -2px -3px 10px;
+    z-index: 2;
+
+}
+.Encabezado .menu ul{
+    width: 100%;
+    height: 100%;
+    list-style: none; 
+    
+    
+
+}
+.ListaMenu > li{
+    float: left;
+    position: relative;
+}
+.menu{
+    width: 60%;
+    height: 100%;
+    padding: 25px;
+    z-index: 50;
+}
+/*.line{
+    width:100%;
+    height: 2px;
+    background-color: red;
+    
+    transition: 1s;
+}*/
+
+
+
+.menu ul li{
+    list-style: none;
+    height: auto;
+    width: 25%;
+    
+    
+    
+}
+.menu ul li:hover{
+    background-color: var(--color-menu-hover);
+}
+.SubMenu{
+    position: absolute;
+    display: none;
+    transition: 1s;
+    
+}
+#cursor{
+    background-color: var(--color-menu);
+}
+
+.subMenuItem{
+    background-color: var(--color_submenu)
+    
+}
+.menu li:hover .SubMenu{
+    display:block;
+    width: 800%;
+
+}
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+    width: auto;
+    height: 40%;
+    transition: 1s;
+    padding: 25px 20px;
+    font-size: 18px;
+    font-weight: 300;
+    display: block;
+
+}
+.menu ul li a:hover{
+    
+    color:var(--color-a-hover);
+
+}
+.line{
+    width: 0;
+    
+    transition: 2s;
+}
+.menu li:hover .line{
+    
+    width: 100%;
+    
+
+}
+
+/*nav lateral------------------------*/
+.Nav_Lateral{
+    
+    width: 20%;
+    height: 600px;
+    margin: 0;
+    padding: 10px;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: black;
+
+        /*posicion fija*/
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+    transition: linear 1s;
+    display: none;
+    
+
+}
+
+.LineaCompleta{
+    width: 100%;
+}
+.sub_contenedor{
+    background: white;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    
+}
+.sub_contenedor div h2{
+    
+    font-size: 60px;
+    
+}
+.nav_superior{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    background: black;
+    height: 40px;
+}
+
+/*--------------------Imagen Usuario___________________*/
+.Imagen{
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+
+    
+    
+}
+.Imagen img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+     /*esta linea de codigo no 
+    permite que se desfigure la imagen*/
+    object-fit: cover;
+
+}
+/*------------------LOGO-------------------------------*/
+.Contenedor .Nav_Lateral .Logo{
+    font-size: 45px;
+    color: black;
+    
+    width: 100%;
+    margin: 0;
+
+       
+   
+}
+   
+.Contenedor .Nav_Lateral .Logo .logo{
+       text-decoration: none;
+       
+}
+
+
+/*nombre Usuario --------------------*/
+.NombreUsuario{
+    font-size: 20px;
+    width: 75%;
+
+}
+/* Tres ICONOS--------------------------*/
+.tres_iconos{
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    
+
+}
+.Icono{
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    background: cornsilk;
+}
+
+/*Lista-------------------------*/
+.La_lista{/*div*/
+    padding: 0 15% 0 0;
+}
+
+.La_lista ul li{
+    list-style: none;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    
+}
+.La_lista ul li a{
+    transition: 1s;
+}
+.La_lista ul li a:hover{
+    color: white;
+    /*esta linea cambia el cursor a la manito*/
+    cursor: pointer;
+    font-size: 1.3em;
+    
+}
+/*js-------------------*/
+.mover_boton{
+    
+    
+    
+    left: 19%;
+    /*rotar*/
+    transform: rotate(180deg);
+}
+.mostrar_menu{
+    
+
+    width: 20%;
+    height: 700px;
+    z-index: 100;
+    display: flex;
+    
+}
+.aparece{
+    display: none;
+
+}
+.apa{
+    display: none;
+}
+
+
+
+/*no hay contenido que mostrar*/
+.sin_contenido{
+    text-align: center;
+    margin: 50px 0;
+
+}
+#no_hay_contenido{
+    width: 500px;
+    height: 500px;
+}
+
+
+.boton_{
+    width: 100%;
+    height: 3.125rem;
+    text-align: center;
+    position: absolute;
+    top: 700px;
+    z-index: 11111;
+    
+
+}
+.boton_ a{
+    display: block;
+    width: 50%;
+    margin: auto;
+    background-color: var(--color-verde-viche);
+    height: 90%;
+    border-radius: 50px;
+    line-height: 3em;
+    text-decoration: none;
+    color: black;
+    
+
+}
+#diviciona{
+    width: 100%;
+    margin: 0 0 3.125em 0;
+}
+
+
+
+/*barra de acciones-------------------------*/
+.barra_acciones{
+    width: 100%;
+    height: 50px;
+    background-color: var(--color_submenu);
+    box-shadow: black 0px 5px 25px;
+    position: sticky;
+    top: 0;
+}
+.barra_acciones ul{
+    display: flex;
+    list-style: none;
+    margin: 0 0 0 100px;
+    
+}
+.barra_acciones ul li{
+    margin: 0 35px 0 0;
+    line-height: 1em;
+    width: 80px;
+}
+.barra_acciones ul li .a{
+    width: 100%;
+    height: 50%;
+    display: block;
+    text-decoration: none;
+    color: black;
+    background-color: var(--color-verde-viche);
+    margin: 12% 0 0 0;
+    border-radius: 25px;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 900;
+
+}
+.barra_acciones  ul li .a:hover{
+    background-color: var(--color-menu-hover);
+    color:black;
+}
+
+

@@ -1,0 +1,97 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+
+<div>
+    <div>
+        <span></span><h2>Administrar Facturas</h2>
+    </div>
+    <div class="Buscador_factura">
+        <input type="text" name="Nombre_Completo" autocomplete="off" required>
+        <label for="Nombre_Completo" class="Label_Nombre_Completo">
+            <span class="contenido_Nombre_Completo">Nombre Completo.</span>
+        </label>
+    </div>
+    <div class="Tabla_Facturas">
+        {% if contenido == True%}
+            <div class="sin_contenido">
+
+                <h2>SIN CONTENIDO</h2>
+                <img src="{{url_for('static', filename='img/No_hay_contenido.svg')}}" id="no_hay_contenido" alt="">
+            </div>
+        {%else%}
+
+        <div class="margin_aa_15">
+
+            <table id="datatable">
+                <thead>
+                    <tr id="cabeza">
+                        <th class="fondo_negro font_blanco borde_tabla">
+                            No ID
+                        </th>
+                        
+                        <th class="fondo_negro font_blanco borde_tabla">
+                            FECHA
+                        </th>
+                        
+                        <th class="fondo_negro font_blanco borde_tabla">
+                            CLIENTE
+                        </th>
+                        
+                        <th class="fondo_negro font_blanco borde_tabla">
+                            TOTAL FACTURA
+                        </th>
+                        
+                        <th class="fondo_negro font_blanco borde_tabla">
+                            ESTADO
+                        </th>
+                        <th class="fondo_negro font_blanco borde_tabla">
+                            ACCIÓN
+                        </th>
+                    </tr>
+    
+    
+    
+                </thead>
+                <tbody id="body" class="fondo_azul">
+    
+                    {%for i in total%}
+                    <tr id="trbody{{i.0}}" >
+                        
+                        <td class="filtro borde_tabla">
+                            {{i.0}}
+                        </td>
+                        <td class=" borde_tabla">
+                            {{i.1}}
+                        </td>
+                        {%if i.3 == 'Egreso registrado'%}
+                        <td class=" borde_tabla fondo_rojo">
+                            {{i.3}}
+                        </td>
+                        {%else%}
+                        <td class=" borde_tabla">
+                            {{i.3}}
+                        </td>
+                        {%endif%}
+                        <td class=" borde_tabla">
+                            {{i.2}}
+                        </td>
+                        <td class=" borde_tabla">
+                            pago
+                        </td>
+                        
+                        <td class="borde_tabla">
+                            <a class="fondo_verde boton_editar margin_15 padding_lados_15 font_blanco" href="/">Imprimir</a>
+                            <a class="fondo_rojo boton_eliminar margin_15 padding_lados_15 font_blanco" href="/Eliminar_factura/{{i[0]}}">eliminar</a>
+                        </td>
+                    </tr>
+    
+                    {%endfor%}
+    
+                </tbody>
+            </table>
+             
+        </div>
+        {%endif%}
+    </div>
+</div>
+{%endblock%}

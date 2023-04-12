@@ -1,0 +1,165 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="../static/css/admin_.css">
+<div class="flex" style="width: 100%; flex-wrap: nowrap;
+    ">
+    <div id="datatable__" style="transition: width 5s;">
+        <div>
+            <span></span>
+            <h2>Movimientos de caja</h2>
+        </div>
+        <div>
+            <h1>Disponible.</h1>
+            <h2>$ {{disponible}}</h2>
+        </div>
+        <div class="Buscador_factura">
+            <input type="text" name="Nombre_Completo" autocomplete="off" required>
+            <label for="Nombre_Completo" class="Label_Nombre_Completo">
+                <span class="contenido_Nombre_Completo">Nombre Completo.</span>
+            </label>
+        </div>
+        <div class="Tabla_Facturas">
+            {% if contenido == True%}
+            <div class="sin_contenido">
+
+                <h2>SIN CONTENIDO</h2>
+                <img src="{{url_for('static', filename='img/No_hay_contenido.svg')}}" id="no_hay_contenido" alt="">
+            </div>
+            {%else%}
+
+            <div class="margin_aa_15">
+
+                <table id="datatable">
+                    <thead>
+                        <tr id="cabeza">
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                No ID
+                            </th>
+
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                CLIENTE
+                            </th>
+
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                TIPO TRANSACCION
+                            </th>
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                VALOR
+                            </th>
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                VALOR TOTAL
+                            </th>
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                FECHA
+                            </th>
+
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                ACCIÓN
+                            </th>
+                        </tr>
+
+
+
+                    </thead>
+                    <tbody id="body" class="fondo_azul">
+
+                        {%for i in total%}
+                        {% if i.5 == 'egreso'%}
+
+                        <tr id="trbody{{i.0}}" class="fondo_rojo">
+
+                            <td class="filtro borde_tabla">
+                                {{i.0}}
+                            </td>
+                            <td class=" borde_tabla">
+                                {{i.3}}
+                            </td>
+                            <td class=" borde_tabla">
+                                {{i.5}}
+                            </td>
+                            <td class=" borde_tabla">
+                                {{i.2}}
+                            </td>
+                            <td class=" borde_tabla">
+                                {{i.4}}
+                            </td>
+                            <td class=" borde_tabla">
+                                {{i.1}}
+                            </td>
+
+                            <td class="borde_tabla">
+                                <a class="fondo_verde boton_editar margin_15 padding_lados_15 font_blanco"
+                                    onclick="print_doc({{i.0}},true)">Imprimir</a>
+                                <a class="fondo_rojo boton_eliminar margin_15 padding_lados_15 font_blanco"
+                                    href="/Eliminar_factura/{{i[0]}}">eliminar</a>
+                            </td>
+                        </tr>
+                        {%else%}
+                        <tr id="trbody{{i.0}}" class="">
+
+                            <td class="filtro borde_tabla">
+                                {{i.0}}
+                            </td>
+                            <td class=" borde_tabla">
+                                {{i.3}}
+                            </td>
+                            <td class=" borde_tabla">
+                                {{i.5}}
+                            </td>
+                            <td class=" borde_tabla">
+                                {{i.2}}
+                            </td>
+                            <td class=" borde_tabla">
+                                {{i.4}}
+                            </td>
+                            <td class=" borde_tabla">
+                                {{i.1}}
+                            </td>
+
+                            <td class="borde_tabla">
+                                <a class="fondo_verde boton_editar margin_15 padding_lados_15 font_blanco"
+                                    onclick="print_doc({{i.0}})">Imprimir</a>
+                                <a class="fondo_rojo boton_eliminar margin_15 padding_lados_15 font_blanco"
+                                    href="/Eliminar_factura/{{i[0]}}">eliminar</a>
+                            </td>
+                        </tr>
+                        {%endif%}
+                        {%endfor%}
+
+                    </tbody>
+                </table>
+
+            </div>
+            {%endif%}
+        </div>
+        
+        
+    </div>
+
+    <div id="print_doc" class="mostrar_doc off">
+
+    </div>
+
+
+</div>
+
+<script>
+    let datatable = document.getElementById('datatable__')
+    function print_doc(id_doc_print,egreso=false) {
+        if(egreso){
+            print_do = document.getElementById('print_doc')
+            print_do.innerHTML = '<embed src="../static/pdf/egreso/__Factura_Egreso_' + id_doc_print + '.pdf" type="application/pdf" width="100%" height="500px"/>';
+            datatable.classList.toggle('mostrar_fac')
+            print_do.classList.toggle('off')
+        }else{
+            print_do = document.getElementById('print_doc')
+            print_do.innerHTML = '<embed src="../static/pdf/__Factura_venta_' + id_doc_print + '.pdf" type="application/pdf" width="100%" height="500px"/>';
+            datatable.classList.toggle('mostrar_fac')
+            print_do.classList.toggle('off')
+        }
+        
+    }
+</script>
+
+
+{%endblock%}

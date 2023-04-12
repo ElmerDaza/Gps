@@ -1,0 +1,134 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+    <link rel="stylesheet" href="../static/css/factura_mensualida.css">
+    <div class="Contenedor">
+
+        
+    </div>
+    <div class="Contenido">
+
+        <div class="barra_acciones">
+            <ul>
+                <li>
+                    <div class="a" id="">
+                        <span  >
+                            <a href="/Vehiculos">Vehiculos</a>
+    
+                        </span>
+                    </div>
+
+                </li>
+                <li class="apa">
+                    <div class="a">
+                        <a href="/Clientes">Usuarios</a>
+                    </div>
+                </li>
+                <li class="apa">
+                    <div class="a">
+                        <a href="/Admin_Fac">Facturas</a>
+                    </div>
+                </li>
+                <li class="apa">
+                    <div class="a">
+                        <a href="/Admin_Caja">Cuentas</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <form action="/Pago" id="form_datos"  method="post" style="display: flex;
+        flex-direction: row-reverse;">
+            <div class="cont" style="width: 60%;">
+                <h2>Pago de facturas</h2>
+                
+                <label>Tipo de pago</label>
+                <select name="tipo_pago" id="tipo_pago" onchange="valor_abono(this)">
+                    <option value="saldar"><b>Saldar factura</b></option>
+                    <option value="abono"><b>Abono a la deuda</b></option>
+                    <option value="adelanto"><b>Pago adelantado</b></option>
+                </select>
+                <label>Clientes</label>
+                <div class="seccion_">
+                    <div class="seleccion_cliente">
+                        <div onclick="Mostrar()" id="boton_mostar" title="titulo" aria-expanded="true">
+                            <span class="texto">
+                                seleccione usuario
+                            </span>
+                            <span class="">
+    
+                            </span>
+                        </div>
+                        <div class="content_clientes off" id="mostrar" >
+                            <div>
+                                <input type="text" class="cBuscador valor2">
+                            </div>
+                            <div>
+                                <span>***BUSCAR***</span>
+                            </div>
+                            
+                            <ul id="selector">
+                                {%for i in clientes%}
+                                <li class="selector{{i.1}}">
+                                    <a class="a_seleccion" onclick="selection('{{i.1}}'), verificar_select(this)" id="select{{i.1}}"
+                                        role="option" aria-disabled="false" aria-selected="false">
+                                        <span id="check{{i.1}}" class="check"></span>
+                                        <span id="text{{i.1}}" class="text filtro2">
+                                            {{i.0}}
+                                        </span>
+                                        <span id="user-code{{i.1}}" class="off">{{i.1}}</span>
+                                    </a>
+                                </li>
+                                {%endfor%}
+    
+                            </ul>
+                            <input name="data_user" id="data_user" type="text" class="off" autocomplete="off" required>
+    
+                        </div>
+                    </div>
+                </div>
+                <h4><b>Seleccione las placas a facturar.</b></h4>
+
+                <div id="div_placas" class="" style="display: flex;
+                justify-content: center;
+                flex-direction: row-reverse;
+                flex-wrap: wrap;
+                margin: 20px auto;" >
+
+                </div>
+
+                <div id="valor_abono" >
+                    
+                </div>
+
+
+
+                <p>Fecha elaboracion</p>
+                <input type="date" name="fecha" id="fecha" required>
+                <button id="btn_generar">
+                    GENERAR
+                </button>
+            </div>
+            <div id="inf_client" style="width: 40%;">
+                
+            </div>
+        </form>
+        
+
+    </div>
+
+    <script src="../static/js/filtroTabla.js"></script>
+    <script src="../static/js/Facturacion.js"></script>
+    <script src="../static/js/consultar_placa_factura_mes.js"></script>
+    <script>
+        function verificar_select(element){
+            console.log(element.ariaSelected)
+            if (element.ariaSelected === 'true'){
+                //console.log('entre...')
+                consulta_ajax(element.id)
+                consultar_deuda(element.id)
+            }else{
+                console.log(element.id)
+            }
+        }
+        
+    </script>
+{%endblock%}

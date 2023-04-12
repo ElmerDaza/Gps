@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigilante247</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Plantilla_.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/colores_basicos.css')}}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Titillium+Web:wght@900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animacion.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+
+</head>
+
+<body id="content">
+    <div style="position: absolute;
+    width: 200vh; height: 200vh; z-index: 50000000;" class="center_preloader flex" id="center_preloader">
+        <div class="loadingio-spinner-interwind-omci4k0mtro">
+            <div class="ldio-3eeg2ccjgc7">
+                <div>
+                    <div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Encabezado">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/logo.jpg')}}" class="logoImagen" alt="">
+
+        </div>
+        <div class="menu">
+            <ul class="ListaMenu">
+                <li class="ItemMenu">
+                    <a href="/" id="cursor">
+                        Home
+                        <hr class="line">
+                    </a>
+
+
+
+
+                </li>
+                <li class="ItemMenu">
+                    <a href="#">Servicios
+                        <hr class="line">
+                    </a>
+
+
+                    <ul class="SubMenu">
+                        <li class="subMenuItem"><a href="#">
+                                Monitor
+                                <hr class="line">
+                            </a></li>
+                        <li class="subMenuItem"><a href="Control">
+                                Control
+                                <hr class="line">
+                            </a></li>
+                        <li class="subMenuItem"><a href="#">
+                                Registros
+                                <hr class="line">
+                            </a></li>
+                    </ul>
+                </li>
+                <li class="ItemMenu">
+                    <a href="#">Sobre Nosotros
+                        <hr class="line">
+                    </a>
+                </li>
+                <li class="ItemMenu">
+                    <a href="#">Contacto
+                        <hr class="line">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    {%block body%}
+    
+    {%endblock%}
+
+    <footer class="main_footer">
+        <div class="contenedor flex">
+            <div class="column column_33">
+                <h2 class="column_title">Porque visitarnos</h2>
+                <p class="column_txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, adipisci ipsum in
+                    explicabo, illum iste accusantium .</p>
+            </div>
+            <div class="column column_33">
+                <h2 class="column_title">Contactanos</h2>
+                <p class="in-map column_txt">calle donde quiera No 123</p>
+                <p class="column_txt in-phone"> 999-999-999</p>
+                <p class="column_txt in-mail"> comes@ejemplo.com</p>
+            </div>
+            <div class="column column_33">
+                <h2 class="column_title">Siguenos en las redes</h2>
+                <p class="column_txt"><a href="" class="in-twitter link_redes">
+                        Siguenos en twitter
+                    </a></p>
+                <p class="column_txt"><a href="" class="in-facebook link_redes">
+                        facebook
+                    </a></p>
+                <p class="column_txt"><a href="" class="in-youtube link_redes">
+                        visita nuestro canal
+                    </a></p>
+            </div>
+
+            <div class="column">
+                <p class="derechos">© 2020 Fast Foot || todos los derechos recervados </p>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+<script src="{{url_for('static', filename='js/preloader.js')}}"></script>
+<script src="../static/js/ajax.jquery.js"></script>
+</html>

@@ -1,0 +1,65 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/editar.css')}}">
+
+    <h1 class="titulo fondo_gris">Esta editando informacion del usuario {{dat.1}}</h1>
+    <div class="cancelar_boton">
+        <a href="/Productos" class="b_cancelar fondo_rojo">
+            CANCELAR
+        </a>
+    </div>
+    
+    <form action="/Modificar_Producto/{{dat.0}}" method="POST">
+        <div class="ContenedorNuevo flex wrap padding_15" id="">
+
+            <div class="seccion margin_aa_15">
+                <input type="text" name="Codigo" value="{{dat.0}}" autocomplete="off" required>
+                <label for="Codigo" class="Label_Codigo">
+                    <span class="contenido_Codigo">Codigo.</span>
+                </label>
+            </div>
+            <div class="seccion margin_aa_15">
+                <input type="text" name="Descripcion" value="{{dat.1}}" autocomplete="off" required>
+                <label for="Descripcion" class="Label_Descripcion">
+                    <span class="contenido_Descripcion">Descripcion.</span>
+                </label>
+            </div>
+
+
+
+
+
+            <div class="seccion margin_aa_15">
+                <input type="text" name="Precio" value="{{dat.2}}" autocomplete="off" required>
+                <label for="Precio" class="Label_Precio">
+                    <span class="contenido_Precio">Precio.</span>
+                </label>
+            </div>
+
+            <div class="seccion margin_aa_15">
+                <input type="text" name="Existencia" value="{{dat.3}}" autocomplete="off" required>
+                <label for="Existencia" class="Label_Existencia">
+                    <span class="contenido_Existencia">Existencia.</span>
+                </label>
+            </div>
+            <button type="submit" class="btn_guardar fondo_verde">
+                Guardar
+    
+            </button>
+
+        </div>
+
+        
+
+    </form>
+
+    <div class="mensage">
+        <p class="parrafo_mensage">
+            La informacion que esta por modificar no se podra 
+            recuperar en el futuro, debe estar seguro de los cambios que quiere guardar.
+        </p>
+    </div>
+
+    
+{%endblock%}

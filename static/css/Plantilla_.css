@@ -1,0 +1,162 @@
+:root{
+    --color-de-img: #FF1C0D;
+    --color-azul-pagina: rgb(0, 0, 255);
+    --font-titulo: 'Dancing Script', cursive;
+}
+/*font-family: 'Lato', sans-serif;
+font-family: 'Titillium Web', sans-serif;*/
+.stop{
+    /*inpide el scroll en el elemento espesificado*/
+    overflow: hidden;
+}
+
+.Encabezado{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 10px 10px;
+    /*background-color:rgba(0, 0, 136, 0.555);*/
+    transition: 4s;
+    
+    
+}
+
+.logo{
+    width: 10%;
+    height: 100px;
+    
+    z-index: 50;
+
+}
+.logoImagen{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    box-shadow: white -2px -3px 10px;
+
+}
+.Encabezado .menu ul{
+    width: auto;
+    height: auto;
+    list-style: none; 
+    
+    
+
+}
+.ListaMenu > li{
+    float: left;
+    position: relative;
+}
+.menu{
+    width: auto;
+    height: 30px;
+    padding: 25px;
+    z-index: 50;
+}
+/*.line{
+    width:100%;
+    height: 2px;
+    background-color: red;
+    
+    transition: 1s;
+}*/
+
+
+
+.menu ul li{
+    list-style: none;
+    height: auto;
+    
+    
+    
+}
+.menu ul li:hover{
+    background-color: rgba(0, 0, 255, 0.493);
+}
+.SubMenu{
+    position: absolute;
+    display: none;
+    transition: 1s;
+    
+}
+#cursor{
+    background-color: rgba(0, 0, 255, 0.493);
+}
+
+.subMenuItem{
+    background-color: rgba(0, 0, 0, 0.623);
+    
+}
+.menu li:hover .SubMenu{
+    display:block;
+    width: 180%;
+
+}
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+    width: auto;
+    height: 40%;
+    transition: 1s;
+    padding: 25px 20px;
+    font-size: 18px;
+    font-weight: 300;
+    display: block;
+
+}
+.menu ul li a:hover{
+    
+    color:rgba(255, 0, 0, 0.89);
+
+}
+.line{
+    width: 0;
+    
+    transition: 2s;
+}
+.menu li:hover .line{
+    
+    width: 100%;
+    
+
+}
+
+/*----------------------------estilos footer----------------------------*/
+.main_footer{
+    background: #222;
+    color: blanchedalmond;
+    padding: 35px 20px;
+    margin-top: 15px;
+    box-shadow: black 0px -5px 10px;
+}
+.link_redes{
+    display: block;
+    color: antiquewhite;
+    text-decoration: none;
+    font-size: 20px;
+}
+.column_txt{
+    text-align: justify;
+    margin: 0 15px;
+}
+.column_title{
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+}
+
+.column{
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.column_33{
+    width:33%;
+}

@@ -1,0 +1,103 @@
+.fondo_gris{
+    background-color: rgba(128, 128, 128, 0.527);
+}
+.fondo_azul{
+    background-color: rgb(59, 59, 252);
+}
+.fondo_rojo{
+    background-color: red;
+}
+.fondo_verde{
+    background-color: rgb(20, 99, 20);
+}
+.fondo_negro{
+    background-color: black;
+}
+.fondo_sin{
+    background-color: none;
+}
+.fondo_naranja{
+    background-color: rgb(255, 163, 58);
+}
+
+
+.font_gris{
+    color: rgba(128, 128, 128, 0.527);
+}
+.font_azul{
+    color: rgb(59, 59, 252);
+}
+.font_rojo{
+    color: red;
+}
+.font_verde{
+    color: rgb(20, 99, 20);
+}
+.font_negro{
+    color: black;
+}
+.font_blanco{
+    color: white;
+}
+
+.w_40{
+    width: 40%;
+}
+.w_20{
+    width: 20%;
+    
+}
+.fs_5{
+    font-size: 5px;
+}
+.fs_10{
+    font-size: 10px;
+}
+
+
+
+
+.margin_15{
+    margin: 15px;
+}
+.margin_abajo_15{
+    margin-bottom: 15px;
+}
+.margin_arriba_15{
+    margin-top: 15px;
+}
+.margin_lados_15{
+    margin: 0 15px;
+}
+.margin_aa_15{
+    margin: 15px 0px;
+}
+.padding_15{
+    padding: 15px;
+}
+.padding_abajo_15{
+    padding-bottom: 15px;
+    
+}
+.padding_arriba_15{
+    padding-top: 15px;
+}
+.padding_lados_15{
+    padding: 0 15px;
+}
+.padding_aa_15{
+    padding: 15px 0px;
+}
+.flex{
+    display: flex;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.center{
+    text-align: center;
+}
+.borde_tabla{
+    border: rgb(143, 221, 252) solid 2px;
+    border-collapse: collapse;
+}

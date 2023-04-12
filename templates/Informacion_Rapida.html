@@ -1,0 +1,98 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/estilos_control.css')}}">
+
+    
+    <div class="Contenedor">
+
+        <div class="tras" id="tras"><b>></b></div>
+    <div class="Nav_Lateral" id="Nav_Lateral">
+
+        <div class="nav_lateral" id="nav_lateral">
+
+            <h4 class="Logo">
+                <a href="" class="logo">
+                    VIGILANTES-24/7
+                </a>
+            </h4>
+            <hr class="LineaCompleta">
+            <div class="Imagen">
+                <img src="{{ url_for('static', filename= 'img/logo.jpg')}}" alt="Vigilantes-24/7">
+
+            </div>
+            <!--<h3 class="NombreUsuario">
+                Nombre de Usuario
+                <hr class="LineaCorta">
+            </h3>-->
+            <div class="tres_iconos">
+                <div class="Icono"><a href="">i*</a></div>
+                <div class="Icono"><a href="">i-</a></div>
+                <div class="Icono"><a href="">i+</a></div>
+            </div>
+
+            <hr class="LineaCompleta">
+
+            <div class="La_lista">
+                <ul>
+                    <li><a href="/Clientes">Usuarios</a></li>
+                    <li><a href="/Vehiculos">Vehiculos</a></li>
+                    <li><a href="#">Facturacion</a></li>
+                    <li><a href="#">Informacion Rapida</a></li>
+                    <li><a href="#">MAS</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <div class="Contenido">
+
+        <div class="barra_acciones">
+            <ul>
+                <li>
+                    <div class="a" id="btn_nuevo">
+                        <span  >
+                            <b>Nuevo</b>
+    
+                        </span>
+                    </div>
+
+                </li>
+                <li class="apa">
+                    <div class="a">
+                        <b>Editar</b>
+                    </div>
+                </li>
+                <li class="apa">
+                    <div class="a">
+                        <b>Eliminar</b>
+                    </div>
+                </li>
+                <li class="apa">
+                    <div class="a">
+                        <b>Retirado</b>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="sin_contenido">
+            <h2>SIN CONTENIDO</h2>
+            <img src="../img/No_hay_contenido.svg" id="no_hay_contenido" alt="">
+        </div>
+
+        
+
+        
+
+
+        <div class="boton_ aparece" id="btn_guardar">
+            <a href="#"  class="btn_guardar">
+                <b>Guardar</b>
+            </a>
+        </div>
+
+        
+    </div>
+{%endblock%}

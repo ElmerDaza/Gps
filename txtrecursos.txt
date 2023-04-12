@@ -1,0 +1,32 @@
+-------------------
+conector sql
+https://pypi.org/project/mysql-connector-python/
+
+------------
+imagenes en png
+
+https://www.freepik.es/fotos-vectores-gratis/png
+
+________________
+imagenes Principales
+https://undraw.co/illustrations
+
+------------------------
+python web.
+https://www.youtube.com/watch?v=IgCfZkR8wME
+
+---------------------------------------------
+curso de flask
+https://www.youtube.com/watch?v=utt4BL-HvD0&list=PLuB3bC9rWQAsHK6rL87Vz9mfMIlk4ewwL&index=3
+
+--------------------------------------------
+modificar registro en la base de datos
+https://www.youtube.com/watch?v=iLioViw3WwE
+
+--------------------------------------------
+estilos de checkbox y radiobutton
+https://www.youtube.com/watch?v=1-4RgF7AZJw
+
+-----------------------------------------
+estilos de las tablas
+https://www.youtube.com/watch?v=pmd2_sI6iIU&t=70s

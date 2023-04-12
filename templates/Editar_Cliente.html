@@ -1,0 +1,84 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/editar_stilos.css')}}">
+    <h1 class="titulo">Esta editando informacion del usuario {{dat.1}}</h1>
+    <div class="cancelar_boton">
+        <a href="/Clientes" class="b_cancelar">
+            CANCELAR
+        </a>
+    </div>
+    
+    <form action="/Modificar/{{dat.0}}" method="POST">
+        <div class="ContenedorN" id="" style="position: relative;">
+
+            <div class="seccion">
+                <input type="text" name="Nombre_Completo" value="{{dat.1}}" autocomplete="off" required>
+                <label for="Nombre_Completo" class="Label_Nombre_Completo">
+                    <span class="contenido_Nombre_Completo">Nombre Completo.</span>
+                </label>
+            </div>
+
+            <div class="seccion">
+                <input type="text" name="Telefono" value="{{dat.2}}" autocomplete="off" required>
+                <label for="Telefono" class="Label_Telefono">
+                    <span class="contenido_Telefono">Telefono.</span>
+                </label>
+            </div>
+
+            <div class="seccion">
+                <input type="text" name="Correo" value="{{dat.3}}" autocomplete="on" required>
+                <label for="Correo" class="Label_Correo">
+                    <span class="contenido_Correo">Correo.</span>
+                </label>
+            </div>
+            
+            <div class="seccion">
+                <input type="text" name="Cedula" value="{{dat.4}}" autocomplete="off" required>
+                <label for="Cedula" class="Label_Cedula">
+                    <span class="contenido_Cedula">Cedula.</span>
+                </label>
+            </div>
+
+            <div class="seccion">
+                <input type="text" name="DIRECCION" value="{{dat.5}}" autocomplete="off" required>
+                <label for="DIRECCION" class="Label_ID">
+                    <span class="contenido_DIRECCION">DIRECCION</span>
+                </label>
+            </div>
+
+            <div class="seccion">
+                <input type="text" name="ID" value="{{dat.6}}" autocomplete="off" required>
+                <label for="ID" class="Label_ID">
+                    <span class="contenido_ID">Codigo de seguridad</span>
+                </label>
+            </div>
+            
+            <div class="seccion">
+                <input type="date" name="Fecha_Afiliacion" value="{{dat.7}}" autocomplete="off" required>
+                <label for="Fecha_Afiliacion" class="LabelFecha_Afiliacion">
+                    <span class="contenido_Fecha_Afiliacion">Fecha de afiliación.</span>
+                </label>
+            </div>
+            <div class="seccion">
+                
+            </div>
+            <button type="submit" class="btn_guardar">
+                Guardar
+    
+            </button>
+
+        </div>
+
+        
+
+    </form>
+
+    <div class="mensage">
+        <p class="parrafo_mensage">
+            La informacion que esta por modificar no se podra 
+            recuperar en el futuro, debe estar seguro de los cambios que quiere guardar.
+        </p>
+    </div>
+
+    
+{%endblock%}

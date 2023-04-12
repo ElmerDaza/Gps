@@ -1,0 +1,282 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/crear_factura.css')}}">
+<div >
+    <ul class="ListaMenu">
+        <li>
+            <a href="#">
+                SELECCIONE FACTURA
+            </a>
+            <ul class="SubMenu">
+                <!--<li>
+                    <a href="#">Factura venta</a>
+                </li>-->
+                
+                <li>
+                    <a href="FacturaEgreso">Factura egreso</a>
+                </li>
+                <li>
+                    <a href="Facturacion">Pago mensualidad</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <form class="flex" action="/INVOICE" method="POST" id="crearjson">
+
+        <div class="width_50">
+            <div>
+                <span></span>
+                <h4 id="dato_nombre">Datos de factura</h4>
+            </div>
+            <div>
+
+                <div class="" id="">
+                    <h2 class="titulo">
+                        <b>Seleccione cliente</b>
+                    </h2>
+                    <h3>Cliente</h3>
+
+
+
+
+
+
+                    <div class="seleccion_cliente">
+                        <div onclick="Mostrar(), habilitar_btn()" id="boton_mostar" title="titulo" aria-expanded="true">
+                            <span class="texto">
+                                seleccione usuarios
+                            </span>
+                            <span class="">
+
+                            </span>
+                        </div>
+                        <div class="content_clientes off" id="mostrar" >
+                            <div>
+                                <input type="text" class="cBuscador valor2">
+                            </div>
+                            <!--<div>
+                                <div>
+                                    <a class="a_seleccion" onclick="selectionALL()" id="selectALL"
+                                        role="option" aria-disabled="false" aria-selected="false">
+                                        <span id="checkALL" class="check"></span>
+                                        <span id="textALL" class="text filtro2">
+                                            Seleccionar todo.
+                                        </span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="a_seleccion off" onclick="deselectionALL()" id="deselectALL"
+                                        role="option" aria-disabled="false" aria-selected="false">
+                                        <span id="checkALL" class="check"></span>
+                                        <span id="textALL" class="text filtro2">
+                                            Deseleccionar todo.
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>-->
+                            <ul id="selector">
+                                {%for i in datos%}
+                                <li class="selector{{i.0}}">
+                                    <a class="a_seleccion" onclick="selection_f('{{i.0}}')" id="select{{i.0}}"
+                                        role="option" aria-disabled="false" aria-selected="false">
+                                        <span id="check{{i.0}}" class="check"></span>
+                                        <span id="text{{i.0}}" class="text filtro2">
+                                            {{i.1}}
+                                        </span>
+                                    </a>
+                                </li>
+                                {%endfor%}
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <input type="text" name="identificador" id="identificador" class="identificador off" required>
+
+                    <h3>Forma de pago</h3>
+                    <div class="seccion">
+                        <select name="pago" required id="select">
+                            <option value="seleccione">seleccione-----</option>
+
+                            <option value="efectivo">efectivo</option>
+                            <option value="efectivo">consignación</option>
+                        </select>
+                    </div>
+                    <div class="off">
+                        <input type="text" name="codigos" id="cod" value="" required>
+                    </div>
+
+                    
+
+
+                    <hr id="diviciona">
+
+                </div>
+
+
+            </div>
+
+            <h2>Adicionar Producctos</h2>
+            <div class="seccion">
+
+                <input type="text" name="Buscar" autocomplete="off" class="input_buscar margin_lados_15 valor"
+                    id="">
+                <label for="Buscar" class="Label_Buscar">
+                    <span class="contenido_Buscar"><b>Buscar.</b></span>
+                </label>
+
+            </div>
+
+
+            <div class="margin_aa_15">
+
+                <table id="datatable">
+                    <thead>
+                        <tr id="cabeza">
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                Nombre
+                            </th>
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                Cantidad
+                            </th>
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                Acción
+                            </th>
+                        </tr>
+
+
+
+                    </thead>
+                    <tbody id="body" class="fondo_azul">
+
+                        {%for i in product%}
+                        {%if i.0 != 0%}
+                        <tr id="trbody{{i.0}}" class="trbody_id_{{i.0}}">
+
+                            <td class="filtro borde_tabla">
+                                {{i.1}}
+                            </td>
+                            <td class="borde_tabla">
+                                <input name="Cantidad" id="number{{i.0}}" type="number" value="1" min="1" max="{{i.3}}">
+                            </td>
+
+
+                            <td class="borde_tabla">
+                                <a id="agregar" onclick="del_click('trbody{{i.0}}')"
+                                    class="fondo_azul boton_editar margin_15 padding_lados_15 font_blanco">Agregar</a>
+                            </td>
+                        </tr>
+                        {%endif%}
+
+                        {%endfor%}
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+        <div class="width_50">
+            <div>
+                <span></span>
+                <h4>Datos De Factura</h4>
+            </div>
+            <div class="">
+
+
+
+                <table id="table">
+                    <thead>
+                        <tr id="cabeza">
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                Nombre
+                            </th>
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                Cantidad
+                            </th>
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                Vr/ unidad
+                            </th>
+                            <th class="fondo_negro font_blanco borde_tabla">
+                                acción
+                            </th>
+                        </tr>
+
+
+
+                    </thead>
+                    <tbody id="tb" class="">
+
+                        {%for i in product%}
+                        <tr id="trbody{{i.0}}_" class="off_add">
+
+                            <td class="">
+                                {{i.1}}
+                            </td>
+
+                            <td id="cant{{i.0}}">
+                                cant
+                            </td>
+
+
+                            <td id="precio{{i.0}}">
+                                {{i.2}}
+                            </td>
+                            <td class="">
+                                <a id="quitar{{i.0}}" onclick="suprimir('trbody{{i.0}}')"
+                                    class="fondo_rojo boton_editar margin_15 padding_lados_15 font_blanco">Quitar</a>
+                            </td>
+
+                        </tr>
+
+
+                        {%endfor%}
+
+                    </tbody>
+                </table>
+                <hr>
+                <h3><b>Total</b></h3>
+                <p id="total">0</p>
+
+
+
+
+            </div>
+
+            <div class="contenedor_observaciones">
+                <textarea id="observaciones" name="observaciones" placeholder="Deja observaciones especificas acerca de la venta"></textarea>
+            </div>
+
+            <button id="btn_guardar" disabled type="submit" class="btn_guardar fondo_verde" onclick="cargando()">
+                CONTINUAR
+
+            </button>
+
+        </div>
+    </form>
+
+</div>
+
+<script src="{{url_for('static', filename='js/filtroTabla.js')}}"></script>
+<script src="{{url_for('static', filename='js/Facturacion.js')}}"></script>
+<script>
+    arreglo_cli=[];
+</script>
+<!--
+<script>
+    $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+    });
+</script>
+-->
+{%endblock%}

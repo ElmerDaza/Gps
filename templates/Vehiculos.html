@@ -1,0 +1,269 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav_lateral_stile.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/estilos_vehiculos.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/Nuevo_Registro.css')}}">
+<link rel="stylesheet" href="../static/css/colores_basicos.css">
+<link rel="stylesheet" href="../static/css/Producto.css">
+<!--<link rel="stylesheet" href="../static/css/styles.css">-->
+
+
+<div class="Contenedor">
+
+    <div class="tras" id="tras"><b>></b></div>
+    <div class="Nav_Lateral" id="Nav_Lateral">
+
+        <div class="nav_lateral" id="nav_lateral">
+
+            <h4 class="Logo">
+                <a href="" class="logo">
+                    VIGILANTES-24/7
+                </a>
+            </h4>
+            <hr class="LineaCompleta">
+            <div class="Imagen">
+                <img src="{{ url_for('static', filename= 'img/logo.jpg')}}" alt="Vigilantes-24/7">
+
+            </div>
+            <!--<h3 class="NombreUsuario">
+                Nombre de Usuario
+                <hr class="LineaCorta">
+            </h3>-->
+            <div class="tres_iconos">
+                <div class="Icono"><a href="">i*</a></div>
+                <div class="Icono"><a href="">i-</a></div>
+                <div class="Icono"><a href="">i+</a></div>
+            </div>
+
+            <hr class="LineaCompleta">
+
+            <div class="La_lista">
+                <ul>
+                    <li><a href="/Clientes">Usuarios</a></li>
+                    <li><a href="/Vehiculos">Vehiculos</a></li>
+                    <li><a href="#">Facturacion</a></li>
+                    <li><a href="#">Informacion Rapida</a></li>
+                    <li><a href="#">MAS</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="Contenido">
+
+    <div class="barra_acciones">
+        <ul>
+            <li>
+                <div class="a" id="btn_nuevo">
+                    <span>
+                        <b>Nuevo</b>
+
+                    </span>
+                </div>
+
+            </li>
+            <li class="apa">
+                <div class="a">
+                    <b>Editar</b>
+                </div>
+            </li>
+            <li class="apa">
+                <div class="a">
+                    <b>Eliminar</b>
+                </div>
+            </li>
+            <li class="apa">
+                <div class="a">
+                    <b>Retirado</b>
+                </div>
+            </li>
+        </ul>
+    </div>
+    {% if contenido == True%}
+    <div class="sin_contenido">
+
+        <h2>SIN CONTENIDO</h2>
+        <img src="{{url_for('static', filename='img/No_hay_contenido.svg')}}" id="no_hay_contenido" alt="">
+    </div>
+    {%else%}
+    <div class="tabla_VEHICULOS">
+        <div class="">
+            <h1>Datos basicos de vehiculos</h1>
+        </div>
+        <table class="Tabla_">
+            <thead>
+                <tr id="cabeza">
+                    {%for i in dat_colum%}
+                    <th class="fondo_negro font_blanco borde_tabla">
+                        <b>{{i}}</b>
+                    </th>
+                    {%endfor%}
+                    
+                    <th class="fondo_negro font_blanco borde_tabla">
+                        ACCION
+                    </th>
+                </tr>
+
+
+
+            </thead>
+            <tbody>
+
+                {%for i in vehiculos%}
+                <tr>
+                    <td class=" borde_tabla">
+                        {{i.1}}
+                    </td>
+                    <td class=" borde_tabla">
+                        {{i.2}}
+                    </td>
+                    <td class=" borde_tabla">
+                        {{i.3}}
+                    </td>
+                    <td class=" borde_tabla">
+                        {{i.4}}
+                    </td>
+                    <td class=" borde_tabla">
+                        {{i.5}}
+                    </td>
+                    <td class=" borde_tabla">
+                        {{i.6}}
+                    </td>
+                    <td class=" borde_tabla">
+                        {{i.7}}
+                    </td>
+                    <td class=" borde_tabla">
+                        {{i.8}}
+                    </td>
+                    <td class=" borde_tabla">
+                        <a class="fondo_verde boton_editar margin_15 padding_lados_15 font_blanco" href="/Editar_Vehiculo/{{i.0}}">editar</a>
+                        <a class="fondo_rojo boton_eliminar margin_15 padding_lados_15 font_blanco" href="/Eliminar_vehiculo/{{i.0}}">eliminar</a>
+                    </td>
+                </tr>
+
+                {%endfor%}
+
+            </tbody>
+        </table>
+    </div>
+    {%endif%}
+
+    <div class="aparece" id="nuevoU">
+        <div>
+
+            <form action="/Vehiculo_Nuevo" method="POST">
+
+                <div class="ContenedorN" id="">
+                    <h2 class="titulo">
+                        <b>Ingrese los datos solicitados.</b>
+                    </h2>
+                    
+                    <div class="seccion">
+                        <input type="text" name="Modelo_GPS" autocomplete="off" required>
+                        <label for="Modelo_GPS" class="Label_Modelo_GPS">
+                            <span class="contenido_Modelo_GPS">Modelo GPS.</span>
+                        </label>
+                    </div>
+
+                    <div class="seccion">
+                        <input type="text" name="Placa" autocomplete="off" required>
+                        <label for="Placa" class="Label_Placa">
+                            <span class="contenido_Placa">Placa.</span>
+                        </label>
+                    </div>
+
+                    <div class="seccion">
+                        <input type="text" name="Descripcion_Vehiculo" autocomplete="off" required>
+                        <label for="Descripcion_Vehiculo" class="Label_Descripcion_Vehiculo">
+                            <span class="contenido_Descripcion_Vehiculo">Descripcion Vehiculo.</span>
+                        </label>
+                    </div>
+
+                    
+                    <div class="seccion">
+                        <input type="date" name="Fecha_Instalacion" autocomplete="off" required>
+                        <label for="Fecha_Instalacion" class="Label_Fecha_Instalacion">
+                            <span class="contenido_Fecha_Instalacion">Fecha de Instalacion.</span>
+                        </label>
+                    </div>
+                    
+                    <div class="seccion_">
+                        <div class="seleccion_cliente">
+                            <div onclick="Mostrar(), habilitar_btn()" id="boton_mostar" title="titulo" aria-expanded="true">
+                                <span class="texto">
+                                    seleccione usuario
+                                </span>
+                                <span class="">
+    
+                                </span>
+                            </div>
+                            <div class="content_clientes off" id="mostrar" >
+                                <div>
+                                    <input type="text" class="cBuscador valor2">
+                                </div>
+                                <div>
+                                    <span>***BUSCAR***</span>
+                                </div>
+                                <input name="data_user" id="data_user" type="text" class="off" autocomplete="off" required>
+                                <ul id="selector">
+                                    {%for i in datos%}
+                                    <li class="selector{{i.0}}">
+                                        <a class="a_seleccion" onclick="selection('{{i.0}}')" id="select{{i.0}}"
+                                            role="option" aria-disabled="false" aria-selected="false">
+                                            <span id="check{{i.0}}" class="check"></span>
+                                            <span id="text{{i.0}}" class="text filtro2">
+                                                {{i.1}}
+                                            </span>
+                                            <span id="user-code{{i.0}}" class="off">{{i.4}}</span>
+                                        </a>
+                                    </li>
+                                    {%endfor%}
+    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seccion_">
+                        <h4>Tipo de instalacion</h4>
+
+                        <input value="Sencilla" type="radio" name="Tipo_Instalacion" id="ins_sencilla" required>
+                        <label for="ins_sencilla">Sencilla</label>
+                        <input value="Reforzado" type="radio" name="Tipo_Instalacion" id="ins_reforzado" required>
+                        <label for="ins_reforzado">Reforzado</label>
+                    </div>
+
+                    <div class="salir">
+                        <p id="salir">Cancelar</p>
+                    </div>
+                    <button type="submit" class="btn_guardar">
+                        Guardar
+
+                    </button>
+
+                    <hr id="diviciona">
+
+
+                </div>
+
+            </form>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+</div>
+<script src="{{url_for('static', filename='js/menu.js')}}"></script>
+<script src="{{url_for('static', filename='js/NuevoVehiculo.js')}}"></script>
+<script src="{{url_for('static', filename='js/Facturacion.js')}}"></script>
+<script src="{{url_for('static', filename='js/filtroTabla.js')}}"></script>
+
+
+{%endblock%}

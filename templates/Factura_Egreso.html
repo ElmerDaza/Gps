@@ -1,0 +1,112 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/crear_factura.css')}}">
+<div>
+    <ul class="ListaMenu">
+        <li>
+            <a href="#">
+                seleccione_factura
+            </a>
+            <ul class="SubMenu">
+                <li>
+                    <a href="/Crear_Factura">Factura_venta</a>
+                </li>
+                
+                <li>
+                    <a href="/Facturacion">Pago mensualidad</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <form action="/Registrar_Egreso" method="POST" class="">
+
+        <div class="ContenedorNuevo flex wrap margin_aa_15" id="">
+            <h2 class="titulo margin_aa_15">
+                <b>Ingrese los datos solicitados.</b>
+            </h2>
+            <div class="seccion margin_aa_15">
+                <input type="text" name="Pagado_a" id="Pagado_a" autocomplete="off" required >
+                <label for="Pagado_a" class="Label_Pagado_a">
+                    <span class="contenido_Pagado_a">Pagado a:.</span>
+                </label>
+            </div>
+            <div class="seccion margin_aa_15">
+                <input type="text" name="Telefono" autocomplete="off"  pattern="[0-9]+">
+                <label for="Telefono" class="Label_Telefono">
+                    <span class="contenido_Telefono">Telefono.</span>
+                </label>
+            </div>
+
+
+            <div class="seccion margin_aa_15">
+                <input type="text" name="NIT" autocomplete="off" >
+                <label for="NIT" class="Label_NIT">
+                    <span class="contenido_NIT">NIT</span>
+                </label>
+            </div>
+
+
+            
+
+            <div class="seccion margin_aa_15">
+                <input type="number" name="Valor" id="Valor" autocomplete="off" required pattern="[0-9]+">
+                <label for="Valor" class="Label_Valor">
+                    <span class="contenido_Valor">Valor.</span>
+                </label>
+            </div>
+            <div class="seccion margin_aa_15">
+                <input type="text" name="Direccion" autocomplete="off">
+                <label for="Direccion" class="Label_Direccion">
+                    <span class="contenido_Direccion">Direccion.</span>
+                </label>
+            </div>
+
+            <div class="seccion margin_aa_15">
+                <input type="text" name="Consepto" id="Comsepto" autocomplete="off" required >
+                <label for="Consepto" class="Label_Consepto">
+                    <span class="contenido_Consepto">Consepto</span>
+                </label>
+            </div>
+            <div class="seccion margin_aa_15">
+                <input type="date" name="Fecha" id="Fecha" autocomplete="off" required>
+                <label for="Fecha" class="LabelFecha">
+                    <span class="contenido_Fecha">Fecha.</span>
+                </label>
+            </div>
+
+
+            <div class="seccion margin_aa_15">
+                <input type="text" name="Observaciones" autocomplete="off"  >
+                <label for="Observaciones" class="Label_Observaciones">
+                    <span class="contenido_Observaciones">Observaciones</span>
+                </label>
+            </div>
+
+
+            
+            <button id="btn_guardar" disabled type="submit" class="btn_guardar fondo_verde" onclick="cargando()">
+                Enviar
+
+            </button>
+            
+
+
+
+        </div>
+
+    </form>
+
+
+</div>
+<div id="t_caja" class="off">{{ultimo}}</div>
+<script src="{{url_for('static', filename='js/filtroTabla.js')}}"></script>
+<script src="{{url_for('static', filename='js/Facturacion.js')}}"></script>
+<script>
+    document.addEventListener('keyup',()=>{
+        registrarEgreso();
+    });
+</script>
+
+
+{%endblock%}

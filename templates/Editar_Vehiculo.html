@@ -1,0 +1,160 @@
+{%extends "Plantilla.html" %}
+{%block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/editar_stilos.css')}}">
+
+<!--<link rel="stylesheet" href="{{url_for('static', filename='css/Nuevo_Registro.css')}}">-->
+
+    <h1 class="titulo">Esta editando informacion del vehiculo con placa: {{dat.2}}</h1>
+    <div class="cancelar_boton">
+        <a href="/Vehiculos" class="b_cancelar">
+            CANCELAR
+        </a>
+    </div>
+    
+    <form action="/Modificar_Vehiculo/{{dat.0}}" method="POST">
+        <div class="ContenedorN" id="" style="position: relative;">
+
+            <div class="seccion">
+                <input type="text" name="placa" autocomplete="off" value="{{dat.2}}"required>
+                <label for="placa" class="Label_placa">
+                    <span class="contenido_placa">Placa.</span>
+                </label>
+            </div>
+            <div class="seccion">
+                <input type="text" name="Modelo_GPS" autocomplete="off" value="{{dat.3}}"required>
+                <label for="Modelo_GPS" class="Label_Modelo_GPS">
+                    <span class="contenido_Modelo_GPS">Modelo GPS.</span>
+                </label>
+            </div>
+
+
+            <div class="seccion">
+                <input type="text" name="Descripcion_Vehiculo" autocomplete="off" value="{{dat.4}}" required>
+                <label for="Descripcion_Vehiculo" class="Label_Descripcion_Vehiculo">
+                    <span class="contenido_Descripcion_Vehiculo">Descripcion Vehiculo.</span>
+                </label>
+            </div>
+
+            <div class="seccion">
+                <input type="date" name="Fecha_Instalacion" autocomplete="off" value="{{dat.8}}" required>
+                <label for="Fecha_Instalacion" class="Label_Fecha_Instalacion">
+                    <span class="contenido_Fecha_Instalacion">Fecha de Instalacion.</span>
+                </label>
+            </div>
+            
+            <div class="seccion_">
+                <h4>Tipo de instalacion</h4>
+                {%if dat.7=='Sencilla'%}
+                <input value="Sencilla" checked="true" type="radio" name="Tipo_Instalacion" id="ins_sencilla" required>
+                <label for="ins_sencilla">Sencilla</label>
+                <input value="Reforzado" type="radio" name="Tipo_Instalacion" id="ins_reforzado" required>
+                <label for="ins_reforzado">Reforzado</label>
+                {%else%}
+                <input value="Sencilla" type="radio" name="Tipo_Instalacion" id="ins_sencilla" required>
+                <label for="ins_sencilla">Sencilla</label>
+                <input value="Reforzado" checked="true" type="radio" name="Tipo_Instalacion" id="ins_reforzado" required>
+                <label for="ins_reforzado">Reforzado</label>
+
+                {%endif%}
+            </div>
+            
+            <div class="seccion_" style="top: 20px;">
+                <div class="seleccion_cliente">
+                    <div onclick="Mostrar(), habilitar_btn()" id="boton_mostar" title="titulo" aria-expanded="true">
+                        <span class="texto" id="nombre_cliente">
+                            {{dat.5}}
+                        </span>
+                        <span class="">
+
+                        </span>
+                    </div>
+                    <div class="content_clientes off" id="mostrar" >
+                        <div>
+                            <input type="text" class="cBuscador valor2">
+                        </div>
+                        <div>
+                            <span>***BUSCAR***</span>
+                            <input value="{{usercode.0}}" name="data_user" id="data_user" type="text" class="off" autocomplete="off" required>
+                        </div>
+                        
+                        <ul id="selector">
+                            {%for i in clientes%}
+                            <li class="selector{{i.0}}" style="text-decoration: none;">
+                                {%if i.1==dat.5%}
+                                <a class="a_seleccion" onclick="selection('{{i.0}}'),cambiar_nombre_client('{{i.1}}')" id="select{{i.0}}"
+                                    role="option" aria-disabled="false" aria-selected="true">
+                                    <span id="check{{i.0}}" class="check selected"></span>
+                                
+                                    <span id="text{{i.0}}" class="text filtro2">
+                                        {{i.1}}
+                                    </span>
+                                    <span id="user-code{{i.0}}" class="off filtro2">{{i.4}}</span>
+                                    
+                                </a>
+                                
+                                {%else%}
+                                <a class="a_seleccion" onclick="selection('{{i.0}}'),cambiar_nombre_client('{{i.1}}')" id="select{{i.0}}"
+                                    role="option" aria-disabled="false" aria-selected="false">
+                                    <span id="check{{i.0}}" class="check"></span>
+                                
+                                    <span id="text{{i.0}}" class="text filtro2">
+                                        {{i.1}}
+                                    </span>
+                                    <span id="user-code{{i.0}}" class="off filtro2">{{i.4}}</span>
+                                    
+                                </a>
+                                {%endif%}
+                            </li>
+                            {%endfor%}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="seccion" style="margin: 0;" >
+                <div>
+                    <p class="titulo" style="color: white;margin: 0;">Estado</p>
+                </div>
+                <div>
+                {%if dat.6=='activo'%}
+                <input type="checkbox" checked="true" name="estado" id="" style="width: 70px;">
+                <span style="color: white;">activo</span>
+                {%else%}
+                <input type="checkbox" name="estado" id="" style="width: 70px;">
+                <span style="color: white;">desactivado</span>
+                {%endif%}
+                </div>
+            </div>
+            
+            <div class="seccion">
+            </div>
+
+            <button type="submit" class="btn_guardar">
+                Guardar
+
+            </button>
+
+        </div>
+
+        
+
+    </form>
+
+    <div class="mensage">
+        <p class="parrafo_mensage">
+            La informacion que esta por modificar no se podra 
+            recuperar en el futuro, debe estar seguro de los cambios que quiere guardar.
+        </p>
+    </div>
+
+<script src="{{url_for('static', filename='js/Facturacion.js')}}"></script>
+<script src="{{url_for('static', filename='js/Editar_Vehiculo.js')}}"></script>
+<script src="{{url_for('static', filename='js/filtroTabla.js')}}"></script>
+<script>
+    arreglo_cli.push({{usercode.1}});
+</script>
+ 
+{%endblock%}

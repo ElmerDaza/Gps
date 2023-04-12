@@ -1,0 +1,29 @@
+
+.nav_sup{
+    width: 90%;
+    margin: 0 auto;
+    height: 60px;
+    line-height: 45px;
+    
+}
+nav{
+    width: 100%;
+    height: auto;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+}
+.nav_sup nav ul li a:hover{
+
+    background-color: rgb(118, 118, 235);
+    color: black;
+}
+.nav_sup nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-bottom: auto;
+    margin-top: auto;
+}

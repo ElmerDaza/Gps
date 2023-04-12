@@ -1,0 +1,249 @@
+:root{
+    --color-de-img: #FF1C0D;
+    --color-menu: rgba(0, 0, 255, 0.393);
+    --color-menu-hover:rgba(0, 0, 255, 0.562);
+    --color_submenu:rgba(0, 0, 0, 0.623);
+    --font-titulo: 'Dancing Script', cursive;
+    --color-fondo-encavezado: rgb(41, 41, 41);
+    --font-maquina-vieja:'Syne Mono', monospace;
+    --color-verde-viche: rgba(0, 255, 0, 0.897);
+}
+
+
+/*Contenido de datos*/
+.ContenedorN{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.863);
+    height: 43.75rem;
+    z-index: 1555;    
+    flex-wrap: wrap;
+    /*display: none;*/
+    position: absolute;
+    top: 00px;
+    
+}
+/*titulo----------*/
+.titulo{
+    width: 100%;
+    color:white;
+    font-size: 2.8125rem;
+    text-align: center;
+    font-family: var(--font-titulo);
+    padding: 1.25rem 0;
+    
+}
+#salir{
+    
+    font-family: var(--font-maquina-vieja);
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+.salir{
+    text-align: center;
+    line-height: 3.125rem;
+    background-color: var(--color-de-img);
+    font-family: var(--font-maquina-vieja);
+    width: 12.25rem;
+    height: 3.125rem;
+    box-shadow: white 0.125rem 0.125rem 0.125rem;
+    border-radius: 1.5625rem;
+}
+
+/* seccion de input-----------------------------------------------------------------*/
+.ContenedorN .seccion{
+    width: 50%;
+    height: 3.4375rem;
+    position: relative;
+
+}
+.ContenedorN .seccion input{
+    height: 2.1875rem;
+    width: 70%;
+    padding-top: 1.25rem;
+    border: none;
+    font-size: 1.25rem;
+}
+.ContenedorN .seccion label{
+    position: absolute;
+    margin: 0px;
+    bottom: 0.0125rem;
+    left: 15%;
+    width: 70%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+.ContenedorN .seccion label::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: rgba(0, 0, 0, 0.397) 3px solid;
+    
+}
+.ContenedorN .seccion input:focus
++ label [class*="contenido"]{
+    transform: translateY(-100%);
+    font-size: 0.875rem;
+    
+
+}
+.ContenedorN .seccion label [class*="contenido"]{
+    text-align: center;
+    position: absolute;
+    bottom: 1.5625rem;
+    left: 0px;
+    transition: all 0.5s ease;
+
+}
+
+.seccion_{
+    width: 50%;
+    height: 3.75rem;
+    position: relative;
+    font-family: var(--font-maquina-vieja);
+    font-size: 1.25rem;
+}
+.seccion_ h4{
+    color: white;
+    font-family: var(--font-titulo);
+}
+.seccion_ input[type="radio"]{
+    display: none;
+}
+.seccion_ label{
+    color: white;
+    padding: 0.3125rem 0.3125rem 0.3125rem 2.5rem;
+    position: relative;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.8s ease;
+}
+.seccion_ label:hover{
+    background-color: rgba(128, 128, 128, 0.384);
+}
+/*before incluye un elemento justo antes de la etiqueta seleccionada*/
+.seccion_ label::before{
+    content: "";
+    width: 0.9375rem;
+    height: 0.9375rem;
+    display: inline-block;
+    background: none;
+    border: 3px solid white;
+    position: absolute;
+    left: 1px;
+    top: 0.625rem;
+}
+/* esto espesifica que cuando input este seleccionado':checked' aplique cambios a lo indicado '+ label'*/
+.seccion_ input[type="radio"]:checked + label{
+    padding: 0.3125rem 0.3125rem;
+    background: var(--color-menu);
+    border-radius: 0.1875rem;
+    color: black;
+}
+.seccion_ input[type="radio"]:checked + label::before{
+    display: none;
+}
+
+.btn_guardar{
+    font-family: var(--font-maquina-vieja);
+    width: 12.25rem;
+    height: 3.125rem;
+    background-color: var(--color-verde-viche);
+    box-shadow: white 0.125rem 0.125rem 0.125rem;
+    border-radius: 1.5625rem;
+}
+
+#diviciona{
+    width: 100%;
+    margin: 0 0 3.125em 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*------------seleccione cliente----------------.seleccion_cliente{
+
+}*/
+
+.text{
+    position: relative;
+    top: 5px;
+    margin-left: 25px;
+    margin-top: 5px;
+    max-width: 100%;
+    height: 35px;
+
+}
+.selected{
+    background-color: red;
+}
+.check{
+    position: absolute;
+    /*background-color: brown;*/
+    display: inline;
+    margin: 10px 5px;
+    padding: 5px;
+    border: mintcream 2px solid;
+}
+.a_seleccion{
+    margin: 15px 0;
+    cursor: pointer;
+    width: 350px;
+    height: 35px;
+}
+
+
+
+#boton_mostar{
+    width: 70%;
+    height: 35px;
+    cursor: pointer;
+    background-color: rgba(201, 202, 206, 0.815);
+    text-align: center;
+    margin: 25px 25px 0 25px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: black 2px 2px 15px;
+    line-height: 40px;
+}
+.a_seleccion:hover{
+    background-color: rgb(39, 18, 18);
+    
+}
+.content_clientes{
+    width: 70%;
+    color: white;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.836);
+    border: solid 1px black;
+    border-radius: 5px;
+    box-shadow: black 1px 1px 2px;
+    margin: 0 25px;
+    padding: 15px;
+    z-index: 2000000;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+.cBuscador{
+    width: 100%;
+}
+.off{
+    display: none;
+}
+

@@ -1,0 +1,169 @@
+.off{
+    display: none;
+}
+.title{
+    text-align: center;
+    padding: 35px;
+}
+.contenido{
+    background: rgba(112, 107, 98, 0.603);
+    padding: 15px;
+    margin: 20px 0 20px 0;
+}
+.container{
+    display: flex;
+}
+.contenedor_1{
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+    text-align: center;
+}
+.controles{
+    border: 2px black solid;
+    display: inline-block;
+    padding: 10px;
+    background: rgba(0, 128, 128, 0.13);
+}
+/*inputs
+
+label{
+    position: absolute;
+    margin: 0px;
+    bottom: 0.0125rem;
+    left: 15%;
+    width: 70%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+label::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: rgba(0, 0, 0, 0.397) 3px solid;
+    
+}*/
+.contenedor_2{
+    text-align: center;
+    width: 100%;
+}
+.contenedor_2 div div input[type="radio"]{
+    display: none;
+}
+
+
+.contenedor_2 div div input:focus
++ label [class*="contenido"]{
+    transform: translateY(-100%);
+    font-size: 0.875rem;
+    
+
+}
+.contenedor_2 div div label{
+    color: white;
+    padding: 0.3125rem 0.3125rem 0.3125rem 2.5rem;
+    position: relative;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.8s ease;
+}
+.contenedor_2 div div label:hover{
+    background-color: rgba(128, 128, 128, 0.384);
+}
+.contenedor_2 div div label::before{
+    content: "";
+    width: 0.9375rem;
+    height: 0.9375rem;
+    display: inline-block;
+    background: none;
+    border: 3px solid white;
+    position: absolute;
+    left: 1px;
+    top: 0.625rem;
+}
+.contenedor_2 div div input[type="radio"]:checked + label{
+    padding: 0.3125rem 0.3125rem;
+    background: var(--color-menu);
+    border-radius: 0.1875rem;
+    color: black;
+}
+.contenedor_2 div div input[type="radio"]:checked + label::before{
+    display: none;
+}
+/*btn_selection*/
+.btn_selection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 10px;
+}
+.cobro_dual{
+    /*align-self: center;*/
+    padding: 20px;
+    margin: auto;
+    background: radial-gradient(greenyellow,rgb(20, 23, 252));
+    border-radius: 40px;
+    width: 200px;
+    height: 15px;
+    cursor: pointer;
+    transition: 2s;
+}
+.btn_selection button{
+    
+    padding: 20px;
+    margin: auto;
+    border-radius: 40px;
+    width: 200px;
+    height: 15px;
+    line-height: 5px;
+}
+.cobro_wap{
+    background: green;
+    cursor: pointer;
+    transition: 1s;
+
+}
+.cobro_wap a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.cobro_email{
+    background: blue;
+    cursor: pointer;
+    transition: 3s;
+
+}
+.cobro_email a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.cobro_dual :hover{
+    background: linear-gradient(to bottom,rgb(20, 22, 17),rgb(20, 23, 252));
+    color: antiquewhite;
+    
+}
+.cobro_wap :hover{
+    background: gray;
+    color:white;
+   
+}
+.cobro_email :hover{
+    background: gray;
+    color: white;
+}
+#inp_dia{
+    width: 200px;
+    height: 20px;
+    
+}
+.inp_{
+    display: flex;
+    flex-direction: column-reverse;
+}

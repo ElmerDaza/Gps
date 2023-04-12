@@ -1,0 +1,41 @@
+{%extends "Plantilla.html"%}
+{%block body%}
+<div class="contenido">
+    <div class="titulo">
+        <h1>COBRO SATISFACTORIO</h1>
+    </div>
+    <div class="contenedor">
+        <div>
+            <div class="sub_title">No Cobrados</div>
+            {%for i in no_cobro%}
+            <ul class="no_cobrado">
+                <li class="item_no_cobro">
+                    {{i}}
+                </li>
+            </ul>
+            {%endfor%}
+        </div>
+
+        <div>
+            <div class="sub_title">Acciones</div>
+            <ul>
+                <li><a href="/Gestor_Cobros">gestor de cobro</a></li>
+                <li><a href="/Clientes">usuarios</a></li>
+                <li><a href="/Vehiculos">vehiculos</a></li>
+                <li><a href="/Control">control</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<script>
+    window.onload=function(){
+        window.location.hash='no-back-button';
+        window.location.hash='Again-No-back-button';
+        window.oshashchange=function(){
+            window.location.hash='no-back-button';
+
+        }
+    }
+</script>
+{%endblock%}

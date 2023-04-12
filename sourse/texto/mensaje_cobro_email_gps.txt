@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYLE type="text/css">
+        .contenedor{border-width: 1px; 
+            border-radius: 5%;
+            box-shadow: #567bdf 5px 5px 5px;
+            border: solid #B4FF9F; 
+            text-align: center;
+            width: 80%;
+            padding: 15px;
+            margin: auto;
+            background: #E8F9FD;
+            
+        }
+        
+            
+            
+        
+        img{
+            width: 150PX;
+            height: 150px;
+            border:3px solid #B4FF9F;
+            border-radius: 50%;
+            margin: auto;
+        }
+        .text{
+            font-size: 12px;
+            font-family: Arial;
+        }
+        .advertencia{
+            font-size: 9px;font-family: 'Times New Roman';
+        }
+     </STYLE>
+</head>
+<body>
+    <div class='contenedor'>
+        <div>
+            <h1>
+                ¡HOLA! 
+            </h1>
+    
+        </div>
+    
+        <img src="http://imgfz.com/i/Wc07I4x.png">
+    
+        <div class="contenedor_hijo">
+            <p class="text">
+                Te deseamos un exelente y bendecido dia desde el equipo de GPS Vigilantes 24/7
+                hoy
+                , te recordamos el pago de la mensualidad para el servicio de monitoreo 24/7 correspondiente al mes de 
+            </p>
+            <p class="advertencia">este mensaje se genera automáticamente por favor <b>No responder</b>, SI YA REALIZÓ EL PAGO OMITA ESTE MENSAJE.</p>
+            
+        </div>
+    
+    </div>   
+</body>
+</html>
